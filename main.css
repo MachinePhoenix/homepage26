@@ -1074,13 +1074,27 @@ hr.soft {
 }
 
 .timeline-item {
-    width: calc(100% - 40px);
+    width: calc(100% - 60px); /* 调整宽度以适应边框 */
     margin-left: 40px;
-    padding-left: 20px;
+    padding: 20px;
     border-left: 5px solid #333;
     text-align: left;
     border-right: none;
     position: relative;
+    /* 添加边框和阴影效果 */
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+/* 悬停效果 */
+.timeline-item:hover {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+    border-color: #bbb;
 }
 
 .timeline-item:before {
@@ -1093,6 +1107,7 @@ hr.soft {
     border-radius: 5px;
     left: -8px;
     right: auto;
+    z-index: 2;
 }
 
 .timeline-item:nth-child(odd):before {
@@ -1108,7 +1123,6 @@ hr.soft {
 .timeline-item:nth-child(odd):after {
     left: -8px;
     right: auto;
-    /* bottom: 0; */
 }
 
 .timeline-item:nth-child(odd) {
@@ -1132,17 +1146,35 @@ hr.soft {
     left: -8px;
 }
 
-.timeline-date {
-    font-size: 16px;
+/* 新增机构行样式 */
+.timeline-org {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 18px;
     font-weight: 600;
     color: #113f7c;
 }
 
+.timeline-org .social-icon {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+.timeline-date {
+    font-size: 14px;
+    font-weight: 500;
+    color: #666;
+    margin-bottom: 10px;
+}
+
 .timeline-title {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #9b3022;
+    margin-bottom: 8px;
 }
 
 .timeline-desc {
@@ -1210,8 +1242,8 @@ hr.soft {
         text-align: left;
         border-left: 5px solid #333;
         border-right: 0px;
-        width: calc(100% - 45px);
-        padding-left: 5px;
+        width: calc(100% - 65px);
+        padding: 15px;
         margin-left: 40px;
         margin-right: 0px;
         padding-right: 0px;
@@ -1223,8 +1255,8 @@ hr.soft {
         text-align: left;
         border-left: 5px solid #333;
         border-right: 0px;
-        width: calc(100% - 45px);
-        padding-left: 5px;
+        width: calc(100% - 65px);
+        padding: 15px;
         margin-left: 40px;
         margin-right: 0px;
         padding-right: 0px;
@@ -1238,8 +1270,12 @@ hr.soft {
         left: -8px;
     }
 
+    .timeline-org {
+        font-size: 16px;
+    }
+
     .timeline-date {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .timeline-title {
