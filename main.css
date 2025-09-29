@@ -1067,14 +1067,14 @@ hr.soft {
     position: relative;
 }
 
-/* 修改时间轴线 - 只到圆点位置 */
+/* 修复时间轴线 - 从第一个圆圈开始，到最后一个圆圈结束 */
 .timeline-body::before {
     content: '';
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 25px; /* 调整竖线位置 */
-    width: 3px; /* 细一点的线 */
+    top: 50%; /* 从第一个圆圈的中间开始 */
+    bottom: 50%; /* 到最后一个圆圈的中间结束 */
+    left: 33px; /* 调整竖线位置使其穿过圆圈中心 */
+    width: 3px;
     background: #333;
     z-index: 1;
 }
@@ -1090,12 +1090,11 @@ hr.soft {
 }
 
 .timeline-item {
-    width: calc(100% - 120px); /* 增加右边距 */
+    width: calc(100% - 120px);
     margin-left: 60px;
-    padding: 20px 25px 20px 20px; /* 增加右侧内边距，左侧保持较小 */
+    padding: 20px 25px 20px 20px;
     text-align: left;
     position: relative;
-    /* 边框和阴影效果 */
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     margin-bottom: 25px;
@@ -1112,7 +1111,7 @@ hr.soft {
     border-color: #bbb;
 }
 
-/* 修复时间轴圆点位置和样式 */
+/* 修复圆圈位置 - 确保在竖线中间 */
 .timeline-item::before {
     width: 16px;
     height: 16px;
@@ -1121,15 +1120,27 @@ hr.soft {
     display: block;
     position: absolute;
     border-radius: 50%;
-    left: -35px; /* 调整到正确位置 */
+    left: -43px; /* 精确定位使圆圈中心在竖线上 */
     top: 50%;
-    transform: translateY(-50%);
+    transform: translate(-50%, -50%); /* 使用translate精确定位中心 */
     z-index: 3;
     border: 3px solid white;
     box-shadow: 0 0 0 2px #333;
 }
 
-/* 修复图片大小问题 - 确保选择器优先级足够 */
+/* 修复第一个item的竖线问题 - 添加顶部遮盖 */
+.timeline-body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 30px;
+    width: 8px;
+    height: calc(50% - 50%); /* 遮盖第一个圆圈上方的竖线 */
+    background: white;
+    z-index: 2;
+}
+
+/* 修复图片大小问题 */
 .timeline-org {
     display: flex;
     align-items: center;
@@ -1139,17 +1150,13 @@ hr.soft {
     color: #113f7c;
 }
 
+/* 使用更具体的选择器确保图片大小 */
+.timeline-item .timeline-org .social-icon,
 .timeline-org img.social-icon {
     margin-right: 12px;
-    width: 32px !important; /* 使用 !important 确保覆盖其他样式 */
-    height: 32px !important;
-    object-fit: contain;
-}
-
-/* 如果上面的选择器不够强，可以尝试这个更具体的选择器 */
-div.timeline-org img.social-icon {
     width: 32px !important;
     height: 32px !important;
+    object-fit: contain;
 }
 
 .timeline-date {
@@ -1165,19 +1172,19 @@ div.timeline-org img.social-icon {
     font-family: 'Roboto', sans-serif;
     color: #9b3022;
     margin-bottom: 10px;
-    padding-right: 10px; /* 增加右侧内边距 */
+    padding-right: 10px;
 }
 
 .timeline-desc {
     font-size: 16px;
     font-weight: 200;
-    padding-right: 10px; /* 增加右侧内边距 */
+    padding-right: 10px;
 }
 
 .timeline-host {
     font-size: 14px;
     font-weight: 400;
-    padding-right: 10px; /* 增加右侧内边距 */
+    padding-right: 10px;
 }
 
 /* 调整最后一个项目的样式 */
@@ -1193,9 +1200,21 @@ div.timeline-org img.social-icon {
     border-right: none;
 }
 
+/* 修复最后一个item的竖线问题 - 添加底部遮盖 */
+.timeline > .timeline-body > .timeline-item:last-child::after {
+    content: '';
+    position: absolute;
+    bottom: -25px; /* 调整位置遮盖最后一个圆圈下方的竖线 */
+    left: 30px;
+    width: 8px;
+    height: calc(50% - 50%);
+    background: white;
+    z-index: 2;
+}
+
 @media screen and (max-width: 600px) {
     .timeline-body::before {
-        left: 20px;
+        left: 28px;
     }
     
     .timeline-start {
@@ -1215,14 +1234,14 @@ div.timeline-org img.social-icon {
         text-align: left;
         border-right: 0px;
         width: calc(100% - 90px);
-        padding: 15px 20px 15px 15px; /* 移动端也保持右侧内边距 */
+        padding: 15px 20px 15px 15px;
         margin-left: 60px;
         margin-right: 0px;
         border-left: none;
     }
     
     .timeline-item::before {
-        left: -40px;
+        left: -48px;
         width: 14px;
         height: 14px;
     }
@@ -1243,6 +1262,7 @@ div.timeline-org img.social-icon {
         font-size: 16px;
     }
     
+    .timeline-item .timeline-org .social-icon,
     .timeline-org img.social-icon {
         width: 28px !important;
         height: 28px !important;
@@ -1265,6 +1285,15 @@ div.timeline-org img.social-icon {
     .timeline-host {
         font-size: 10px;
         padding-right: 5px;
+    }
+    
+    /* 移动端修复竖线遮盖 */
+    .timeline-body::after {
+        left: 25px;
+    }
+    
+    .timeline > .timeline-body > .timeline-item:last-child::after {
+        left: 25px;
     }
 }
 
