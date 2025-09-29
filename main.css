@@ -1073,7 +1073,7 @@ hr.soft {
     padding: 20px
 }
 
-.timeline-item:before {
+/* .timeline-item:before {
     width: 11px;
     height: 11px;
     background: #333;
@@ -1081,12 +1081,26 @@ hr.soft {
     display: block;
     position: absolute;
     border-radius: 5px
+} */
+
+.timeline-item:before {
+    left: -8px !important; /* 所有时间轴点都在左侧 */
+    right: auto; /* 移除右侧定位 */
 }
 
-.timeline-item {
+/* .timeline-item {
     width: -webkit-calc(50% - (20px));
     width: calc(50% - (20px));
     position: relative
+} */
+
+.timeline-item {
+    width: calc(100% - 40px); /* 修改宽度，去掉原来的50%计算 */
+    margin-left: 40px; /* 为左侧的时间轴留出空间 */
+    padding-left: 20px;
+    border-left: 5px solid #333; /* 所有项目都使用左边框 */
+    text-align: left; /* 所有项目左对齐 */
+    border-right: none; /* 移除右边框 */
 }
 
 .timeline-item:nth-child(odd):before {
@@ -1105,20 +1119,36 @@ hr.soft {
     text-align: left
 }
 
-.timeline-item:nth-child(even) {
+/* .timeline-item:nth-child(even) {
     margin-right: -webkit-calc(50% + (20px));
     margin-right: calc(50% + (20px));
     padding-right: 20px;
     border-right: 5px solid #333;
     text-align: right
+} */
+
+.timeline-item:nth-child(even) {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: none;
+    text-align: left;
 }
+
+/* .timeline-item:nth-child(even):before {
+    right: -8px
+} */
 
 .timeline-item:nth-child(even):before {
-    right: -8px
+    left: -8px !important;
+    right: auto;
 }
 
-.timeline-item:nth-child(even):after {
+/* .timeline-item:nth-child(even):after {
     right: -8px
+} */
+
+.timeline-item:nth-child(even):after {
+    right: auto;
 }
 
 .timeline-date {
@@ -1155,10 +1185,15 @@ hr.soft {
     border-radius: 5px
 }
 
-.timeline>.timeline-body>.timeline-item:last-child:nth-child(even) {
+/* .timeline>.timeline-body>.timeline-item:last-child:nth-child(even) {
     vertical-align: middle;
     min-height: 200px;
     border-right: 5px dashed #333
+} */
+
+.timeline > .timeline-body > .timeline-item:last-child:nth-child(even) {
+    border-right: none;
+    border-left: 5px solid #333; /* 改为实线边框 */
 }
 
 .timeline>.timeline-body>.timeline-item:last-child:nth-child(odd) {
@@ -1196,12 +1231,13 @@ hr.soft {
         text-align: left;
         border-left: 5px solid #333;
         border-right: 0px;
-        width: 100%;
+        width: calc(100% - 45px);
         padding-left: 5px;
         margin-left: 5px;
         margin-right: 0px;
         padding-right: 0px
     }
+
 
     .timeline>.timeline-body>.timeline-item:last-child:nth-child(odd),
     .timeline>.timeline-body>.timeline-item:last-child:nth-child(even) {
@@ -1209,7 +1245,7 @@ hr.soft {
         text-align: left;
         border-left: 5px solid #333;
         border-right: 0px;
-        width: 100%;
+        width: calc(100% - 45px);
         padding-left: 5px;
         margin-left: 5px;
         margin-right: 0px;
