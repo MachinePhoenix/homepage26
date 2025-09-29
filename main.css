@@ -1067,16 +1067,17 @@ hr.soft {
     position: relative;
 }
 
-/* 添加时间轴线 */
+/* 添加时间轴线 - 确保显示 */
 .timeline-body::before {
     content: '';
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 20px;
-    width: 5px;
+    left: 30px; /* 调整竖线位置，与卡片保持距离 */
+    width: 4px;
     background: #333;
     z-index: 1;
+    display: block !important; /* 确保显示 */
 }
 
 .timeline-start {
@@ -1086,18 +1087,19 @@ hr.soft {
     padding: 20px;
     position: relative;
     z-index: 2;
+    margin-left: 60px; /* 与卡片对齐 */
 }
 
 .timeline-item {
-    width: calc(100% - 80px); /* 增加左边距为时间轴留出空间 */
-    margin-left: 60px; /* 增加左边距 */
+    width: calc(100% - 100px); /* 调整宽度，为时间轴留出更多空间 */
+    margin-left: 80px; /* 增加左边距，使卡片与时间轴分离 */
     padding: 20px;
     text-align: left;
     position: relative;
     /* 边框和阴影效果 */
     border: 1px solid #e0e0e0;
     border-radius: 8px;
-    margin-bottom: 20px;
+    margin-bottom: 25px; /* 增加底部间距 */
     background: white;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     transition: all 0.3s ease;
@@ -1113,31 +1115,19 @@ hr.soft {
 
 /* 时间轴圆点 - 定位在卡片垂直中间 */
 .timeline-item::before {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     background: #333;
     content: "";
     display: block;
     position: absolute;
     border-radius: 50%;
-    left: -40px; /* 调整位置到时间轴线上 */
+    left: -50px; /* 调整位置到时间轴线上 */
     top: 50%;
     transform: translateY(-50%);
     z-index: 3;
     border: 3px solid white;
-    box-shadow: 0 0 0 3px #333;
-}
-
-/* 移除之前的时间轴点样式 */
-.timeline-item:nth-child(odd):before,
-.timeline-item:nth-child(even):before {
-    /* 使用统一的样式，不需要特殊处理 */
-}
-
-/* 移除之前的时间轴线样式 */
-.timeline-item:nth-child(odd):after,
-.timeline-item:nth-child(even):after {
-    display: none;
+    box-shadow: 0 0 0 2px #333;
 }
 
 .timeline-item:nth-child(odd),
@@ -1145,31 +1135,32 @@ hr.soft {
     margin-right: 0;
     padding-right: 0;
     text-align: left;
-    margin-left: 60px; /* 统一左边距 */
+    margin-left: 80px; /* 统一左边距 */
     border-left: none; /* 移除左边框 */
 }
 
-/* 新增机构行样式 */
+/* 机构行样式 - 放大图片 */
 .timeline-org {
     display: flex;
     align-items: center;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     font-size: 18px;
     font-weight: 600;
     color: #113f7c;
 }
 
 .timeline-org .social-icon {
-    margin-right: 10px;
-    width: 20px;
-    height: 20px;
+    margin-right: 12px;
+    width: 28px; /* 放大图片 */
+    height: 28px; /* 放大图片 */
+    object-fit: contain; /* 保持图片比例 */
 }
 
 .timeline-date {
     font-size: 14px;
     font-weight: 500;
     color: #666;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .timeline-title {
@@ -1177,7 +1168,7 @@ hr.soft {
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #9b3022;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .timeline-desc {
@@ -1205,7 +1196,7 @@ hr.soft {
 
 @media screen and (max-width: 600px) {
     .timeline-body::before {
-        left: 15px; /* 移动端调整时间轴线位置 */
+        left: 20px; /* 移动端调整时间轴线位置 */
     }
     
     .timeline-start {
@@ -1214,12 +1205,8 @@ hr.soft {
         text-align: left;
         width: 100%;
         padding-left: 5px;
-        margin-left: 5px;
+        margin-left: 50px; /* 移动端调整 */
         border-left: none; /* 移除移动端的左边框 */
-    }
-
-    .timeline-start:after {
-        display: none; /* 移除移动端的起始点 */
     }
 
     .timeline-item,
@@ -1228,18 +1215,18 @@ hr.soft {
         min-height: 0;
         text-align: left;
         border-right: 0px;
-        width: calc(100% - 65px);
+        width: calc(100% - 80px);
         padding: 15px;
-        margin-left: 45px; /* 移动端调整左边距 */
+        margin-left: 60px; /* 移动端调整左边距 */
         margin-right: 0px;
         padding-right: 0px;
         border-left: none; /* 移除移动端的左边框 */
     }
     
     .timeline-item::before {
-        left: -30px; /* 移动端调整圆点位置 */
-        width: 14px;
-        height: 14px;
+        left: -40px; /* 移动端调整圆点位置 */
+        width: 16px;
+        height: 16px;
     }
 
     .timeline > .timeline-body > .timeline-item:last-child:nth-child(odd),
@@ -1248,15 +1235,20 @@ hr.soft {
         text-align: left;
         border-left: none; /* 移除移动端的左边框 */
         border-right: 0px;
-        width: calc(100% - 65px);
+        width: calc(100% - 80px);
         padding: 15px;
-        margin-left: 45px;
+        margin-left: 60px;
         margin-right: 0px;
         padding-right: 0px;
     }
 
     .timeline-org {
         font-size: 16px;
+    }
+    
+    .timeline-org .social-icon {
+        width: 24px; /* 移动端稍小的图片 */
+        height: 24px;
     }
 
     .timeline-date {
