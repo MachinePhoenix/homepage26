@@ -1064,6 +1064,19 @@ hr.soft {
 
 .timeline-body {
     padding: 0;
+    position: relative;
+}
+
+/* 添加时间轴线 */
+.timeline-body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 20px;
+    width: 5px;
+    background: #333;
+    z-index: 1;
 }
 
 .timeline-start {
@@ -1071,23 +1084,24 @@ hr.soft {
     width: calc(100% - 2 * (20px));
     text-align: center;
     padding: 20px;
+    position: relative;
+    z-index: 2;
 }
 
 .timeline-item {
-    width: calc(100% - 60px); /* 调整宽度以适应边框 */
-    margin-left: 40px;
+    width: calc(100% - 80px); /* 增加左边距为时间轴留出空间 */
+    margin-left: 60px; /* 增加左边距 */
     padding: 20px;
-    border-left: 5px solid #333;
     text-align: left;
-    border-right: none;
     position: relative;
-    /* 添加边框和阴影效果 */
+    /* 边框和阴影效果 */
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     margin-bottom: 20px;
     background: white;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     transition: all 0.3s ease;
+    z-index: 2;
 }
 
 /* 悬停效果 */
@@ -1097,53 +1111,42 @@ hr.soft {
     border-color: #bbb;
 }
 
-.timeline-item:before {
-    width: 11px;
-    height: 11px;
+/* 时间轴圆点 - 定位在卡片垂直中间 */
+.timeline-item::before {
+    width: 16px;
+    height: 16px;
     background: #333;
     content: "";
     display: block;
     position: absolute;
-    border-radius: 5px;
-    left: -8px;
-    right: auto;
-    z-index: 2;
+    border-radius: 50%;
+    left: -40px; /* 调整位置到时间轴线上 */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px #333;
 }
 
-.timeline-item:nth-child(odd):before {
-    left: -8px;
-    right: auto;
-}
-
+/* 移除之前的时间轴点样式 */
+.timeline-item:nth-child(odd):before,
 .timeline-item:nth-child(even):before {
-    left: -8px;
-    right: auto;
+    /* 使用统一的样式，不需要特殊处理 */
 }
 
-.timeline-item:nth-child(odd):after {
-    left: -8px;
-    right: auto;
+/* 移除之前的时间轴线样式 */
+.timeline-item:nth-child(odd):after,
+.timeline-item:nth-child(even):after {
+    display: none;
 }
 
-.timeline-item:nth-child(odd) {
-    margin-right: 0;
-    padding-right: 0;
-    border-right: none;
-    text-align: left;
-    margin-left: 40px;
-}
-
+.timeline-item:nth-child(odd),
 .timeline-item:nth-child(even) {
     margin-right: 0;
     padding-right: 0;
-    border-right: none;
     text-align: left;
-    margin-left: 40px;
-}
-
-.timeline-item:nth-child(even):after {
-    right: auto;
-    left: -8px;
+    margin-left: 60px; /* 统一左边距 */
+    border-left: none; /* 移除左边框 */
 }
 
 /* 新增机构行样式 */
@@ -1187,52 +1190,36 @@ hr.soft {
     font-weight: 400;
 }
 
+/* 调整最后一个项目的样式 */
 .timeline > .timeline-body > .timeline-item:last-child:after {
-    bottom: 0;
-    width: 11px;
-    height: 11px;
-    background: #333;
-    content: "";
-    display: block;
-    position: absolute;
-    border-radius: 5px;
-    left: -8px;
+    display: none; /* 移除之前的下端点 */
 }
 
-.timeline > .timeline-body > .timeline-item:last-child:nth-child(even) {
-    vertical-align: middle;
-    min-height: 200px;
-    border-left: 5px dashed #333;
-    border-right: none;
-}
-
+.timeline > .timeline-body > .timeline-item:last-child:nth-child(even),
 .timeline > .timeline-body > .timeline-item:last-child:nth-child(odd) {
     vertical-align: middle;
     min-height: 200px;
-    border-left: 5px dashed #333;
+    border-left: none; /* 移除左边框 */
     border-right: none;
 }
 
 @media screen and (max-width: 600px) {
+    .timeline-body::before {
+        left: 15px; /* 移动端调整时间轴线位置 */
+    }
+    
     .timeline-start {
         min-height: 50px;
         padding: 0 0 0 5px;
         text-align: left;
-        border-left: 5px dashed #333;
         width: 100%;
         padding-left: 5px;
         margin-left: 5px;
+        border-left: none; /* 移除移动端的左边框 */
     }
 
     .timeline-start:after {
-        left: 17px;
-        width: 11px;
-        height: 11px;
-        background: #333;
-        content: "";
-        display: block;
-        position: absolute;
-        border-radius: 5px;
+        display: none; /* 移除移动端的起始点 */
     }
 
     .timeline-item,
@@ -1240,34 +1227,32 @@ hr.soft {
     .timeline-item:nth-child(even) {
         min-height: 0;
         text-align: left;
-        border-left: 5px solid #333;
         border-right: 0px;
         width: calc(100% - 65px);
         padding: 15px;
-        margin-left: 40px;
+        margin-left: 45px; /* 移动端调整左边距 */
         margin-right: 0px;
         padding-right: 0px;
+        border-left: none; /* 移除移动端的左边框 */
+    }
+    
+    .timeline-item::before {
+        left: -30px; /* 移动端调整圆点位置 */
+        width: 14px;
+        height: 14px;
     }
 
     .timeline > .timeline-body > .timeline-item:last-child:nth-child(odd),
     .timeline > .timeline-body > .timeline-item:last-child:nth-child(even) {
         min-height: 0;
         text-align: left;
-        border-left: 5px solid #333;
+        border-left: none; /* 移除移动端的左边框 */
         border-right: 0px;
         width: calc(100% - 65px);
         padding: 15px;
-        margin-left: 40px;
+        margin-left: 45px;
         margin-right: 0px;
         padding-right: 0px;
-    }
-
-    .timeline-item:before {
-        left: -8px;
-    }
-
-    .timeline-item:after {
-        left: -8px;
     }
 
     .timeline-org {
