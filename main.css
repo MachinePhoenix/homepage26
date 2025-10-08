@@ -1,1037 +1,2036 @@
-<!DOCTYPE html>
-<html>
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+hr,
+dl,
+dd,
+ol,
+ul,
+figure {
+    margin: 0;
+    padding: 0
+}
 
-  <head>
+hr {
+    display: block;
+    -webkit-margin-before: 0.5em;
+    -webkit-margin-after: 0.5em;
+    -webkit-margin-start: auto;
+    -webkit-margin-end: auto;
+    border-style: inset;
+    border-width: 1px
+}
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-RFR2GFKT75"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'G-RFR2GFKT75');
-  </script> -->
-  <!-- Google Tag Manager -->
-  <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  })(window,document,'script','dataLayer','GTM-NC38VTD');</script> -->
-  <!-- End Google Tag Manager -->
+body,
+html {
+    height: 100%
+}
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <!-- <meta http-equiv="refresh" content="0; URL=https://cs.stanford.edu/~leoyuan/"> -->
+body {
+    z-index: initial;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 300;
+    color: #111;
+    background-color: #f9f9f9;
+    -webkit-text-size-adjust: 100%
+}
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-	  
-	<!-- <meta name="google-site-verification" content="u_--0s_Uw50r4zCgRrzltkmFhNCduYOJwPGlKVTuNJU" /> -->
+body:after {
+    display: none;
+    content: url("images/background/background1.JPG") url("images/background/background2.jpg")
+}
 
-  <title>Yue Xin</title>
-  <meta name="description" lang="en" content="This is an academic website for me">
-  <meta name="keywords" lang="en" content="Yue Xin" />
-  
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+ul,
+ol,
+dl,
+figure,
+.highlight {
+    margin-bottom: 15px
+}
 
-  <link rel="shortcut icon" href="images/me.jpg">
-  <link rel="stylesheet" href="main.css">
-  <link rel="stylesheet" href="css/custom.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/academicons.css"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+img {
+    max-width: 100%;
+    vertical-align: middle
+}
 
+figure>img {
+    display: block
+}
 
-  <script src="js/jquery-2.1.3.min.js"> </script>
+figcaption {
+    font-size: 14px
+}
 
-  <!--[if lt IE 9]>
-<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
-</script>
-<![endif]-->
+ul,
+ol {
+    margin-left: 30px
+}
 
-  <script type="text/javascript">
-    function ShowHide(divId, linkDivId) {
-        if(document.getElementById(divId).style.display == 'none') {
-            document.getElementById(divId).style.display='block';
-            document.getElementById(linkDivId).style.display='none'; // Hide the "read more" link
-        }
-        else {
-            document.getElementById(divId).style.display = 'none';
-        }
+li>ul,
+li>ol {
+    margin-bottom: 0
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 300
+}
+
+a {
+    color: #2a7ae2;
+    text-decoration: none
+}
+
+a:visited {
+    color: #1756a9
+}
+
+a:hover {
+    color: #111;
+    text-decoration: underline
+}
+
+blockquote {
+    color: #828282;
+    border-left: 4px solid #e8e8e8;
+    padding-left: 15px;
+    font-size: 20px;
+    letter-spacing: -1px;
+    font-style: italic
+}
+
+blockquote>:last-child {
+    margin-bottom: 0
+}
+
+pre,
+code {
+    font-size: 16px;
+    border: 1px solid #e8e8e8;
+    border-radius: 3px;
+    background-color: #eef
+}
+
+code {
+    padding: 1px 5px
+}
+
+pre {
+    padding: 8px 12px;
+    overflow-x: scroll
+}
+
+pre>code {
+    border: 0;
+    padding-right: 0;
+    padding-left: 0
+}
+
+.wrapper {
+    max-width: -webkit-calc(1200px - (30px * 2));
+    max-width: calc(1200px - (30px * 2));
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 30px;
+    padding-left: 30px
+}
+
+@media screen and (max-width: 800px) {
+    .wrapper {
+        max-width: -webkit-calc(1200px - (30px));
+        max-width: calc(1200px - (30px));
+        padding-right: 15px;
+        padding-left: 15px
     }
-  </script>
-
-  <style>
-    /* 为所有列表项设置样式 */
-    li.indented {
-        position: relative;
-        padding-left: 90px; /* 这是对齐效果的关键，可以根据实际内容调整这个值 */
-    }
-
-    li.indented::before {
-        content: attr(data-date);
-        position: absolute;
-        left: 0;
-        top: 0;
-        white-space: nowrap;
-    }
-  </style>
-  
-
-  
-</head>
-
-
-<body>
-
-    <!-- Google Tag Manager (noscript) -->
-<!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NC38VTD"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
-<!-- End Google Tag Manager (noscript) -->
-
-    <header class="site-header">
-
-  <div class="wrapper">
-<nav class="site-nav">
-  <a href="#" class="menu-icon">
-    <svg viewBox="0 0 18 15">
-      <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-      <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-      <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-    </svg>
-  </a>
-
-  <div class="trigger">
-    <a class="page-link" href="#bio"><b>Biography</b></a>
-	  <a class="page-link" href="#publications"><b>Publications</b></a>
-    <a class="page-link" href="#timeline"><b>Research Experience</b></a>
-    <a class="page-link" href="#timeline2"><b>Engineering Experience</b></a>
-	  <a class="page-link" href="#competitions"><b>Competitions</b></a>
-    <a class="page-link" href="#awards"><b>Honors & Awards</b></a>
-    <!--<a class="page-link" href="#otherprojects">Projects</a>-->
-    <!-- Button for Posts -->
-  </div>
-</nav>
-  </div>
-</header>
-
-  <div id="profile-cover" class="cover shallow-bg img-responsive"> 
-    <div id="profile-namecard" class="profile-wrapper wrapper-light">
-      <div id="my-pic" class="profile-col profile-col-1">
-        <img id="profile-avatar" src="images/me.jpg" alt="Me" class="circle-img border-dark"-/>
-      </div>
-      <div id="my-contact" class="profile-col profile-col-2">
-        <div id="my-name" class="text-grey-dark">
-          Yue Xin<br>
-        </div>
-        <div id="my-title" class="text-grey">
-          Shanghai Jiao Tong University
-        </div>
-        <div id="my-email" class="text-grey-light">
-          xinyuexiong@sjtu.edu.cn
-        </div>
-
-	</div>
-        <div class="social-media">
-          <a href="https://scholar.google.com/citations?user=AAMp54AAAAAJ&hl=zh-CN" target="_blank" class="icon-button linkedin">
-          <i class="ai ai-google-scholar-square icon-linkedin"></i>
-            <span></span>
-          </a>
-
-          <a href="https://github.com/MachinePhoenix" target="_blank" class="icon-button github">
-            <i class="fa fa-github icon-github"></i>
-            <span></span>
-          </a>
-
-          <!-- <a href="https://www.linkedin.com/in/jun-cen-45b995219/" target="_blank" class="icon-button linkedin">
-            <i class="fa fa-linkedin icon-linkedin"></i>
-            <span></span>
-          </a> -->
-         
-          <a href="data/Academic_CV_en.pdf" target="_blank" class="icon-button github">
-            <i class="ai ai-cv icon-github"></i>
-            <span></span>
-          </a>
-
-          <a href="xinyuexiong@sjtu.edu.cn" target="_blank" class="icon-button linkedin">
-            <i class="fa fa-envelope icon-linkedin"></i>
-            <span></span>
-          </a>
-        </div>
-      </div>
-
-      <!-- <div id="my-desc" class="profile-col profile-col-2 hide">
-        <div id="my-desc-title">
-          Another me.
-        </div>
-        <div id="my-desc-content">
-          I enjoy running, playing table tennis, movies, music, and so much more<br>
-        </div>
-      </div> -->
-    </div>
-  </div>
-  <!-- <script type="text/javascript">
-    function deepFeature()
-    {
-      $('#profile-avatar').attr('src', 'images/self-portrait/deep-me.jpg');
-      $('#profile-avatar').removeClass('border-dark');
-      $('#profile-avatar').addClass('border-bright');
-
-      $('#profile-cover').removeClass('shallow-bg');
-      $('#profile-cover').addClass('deep-bg');
-      
-      $('#profile-namecard').removeClass('wrapper-light');
-      $('#profile-namecard').addClass('wrapper-dark');
-      
-      $('#my-desc').removeClass('hide');
-      $('#my-contact').addClass('hide');    
-      // console.log('Move in now...');
-    }
-
-    function shallowFeature()
-    {
-      $('#profile-avatar').attr('src', 'images/self-portrait/me.jpg');
-      $('#profile-avatar').removeClass('border-bright');
-      $('#profile-avatar').addClass('border-dark');
-
-      $('#profile-cover').removeClass('deep-bg');
-      $('#profile-cover').addClass('shallow-bg');
-      
-      $('#profile-namecard').removeClass('wrapper-dark');
-      $('#profile-namecard').addClass('wrapper-light');
-      
-      $('#my-contact').removeClass('hide');
-      $('#my-desc').addClass('hide');
-      // console.log('Move out now...');
-    }
-
-    $(function() { 
-      $('#my-pic').hover(deepFeature, shallowFeature);
-    })
-
-  </script> -->
-
-<div class="page-content">
-<div class="wrapper">
-<div id="bio" class="bio">
-
-  <h1 class="md-heading text-left">
-    <i class="fa fa-id-card" aria-hidden="true"></i>
-    About
-  </h1>
-  <div class="bio-body" style="overflow:hidden;">
-    <p>
-		I am a third-year M.S. student at <a href="https://min.sjtu.edu.cn/" target="_blank">Institute of Media, Information, and Network (min), SJTU</a>, 
-		advised by <a href="https://min.sjtu.edu.cn/En/FacultyShow/4?Vid=14" target="_blank">Prof. Hongkai Xiong</a> and <a href="https://min.sjtu.edu.cn/En/FacultyShow/4?Vid=20" target="_blank">Prof. Wenrui Dai</a>. 
-		During my undergraduate studies, I majored in Electronic Science and Technology and minored in Computer Science at <a href="https://www.sjtu.edu.cn/" target="_blank">SJTU</a>.
-      	<br>
-		I have a keen interest in machine learning, interpretable AI, and large (language) models. Now I am focusing on reasoning models.
-		<br>
-		I am currently working with <a href="https://tongzhang-ml.org/" target="_blank">Tong Zhang</a> as a research intern at <a href="https://illinois.edu/" target="_blank">UIUC</a>.
-		Previously, I was lucky enough to collaborate with <a href="http://www.yelabs.net/" target="_blank">Jieping Ye</a> @ <a href="https://umich.edu/" target="_blank">UMich</a> 
-		and <a href="http://qszhang.com/" target="_blank">Quanshi Zhang</a> @ <a href="https://www.sjtu.edu.cn/" target="_blank">SJTU</a>.
-		<br>
-		A public up-to-date resume can be found <a href="data/Academic_CV_en.pdf" target="_blank">here</a>. Feel free to contact me!
-		
-    </p>
-
-    <div style="width: 50%; float:left">
-			<h3>
-		    <i class="fa fa-star" aria-hidden="true"></i>
-		    <strong>Interests</strong>
-			</h3>
-      <ul>
-        <!-- <li><b>Multi-modality</b></li> -->
-        <li><b>Machine Learning</b></li><br>
-        <!-- <a href="https://arxiv.org/pdf/2506.21539" target="_blank">[WorldVLA]</a><a href="https://arxiv.org/pdf/2503.03464" target="_blank">[Survey]</a><a href="https://arxiv.org/abs/2402.10534" target="_blank">[VLP]</a><a href="https://ieeexplore.ieee.org/abstract/document/9681231" target="_blank">[VPN]</a> -->
-        <li><b>Large Language Models</b></li><br>
-        <!-- <a href="https://arxiv.org/abs/2403.13261" target="_blank">[STC]</a><a href="https://arxiv.org/abs/2207.01452" target="_blank">[REAL]</a><a href="https://arxiv.org/abs/2108.04562" target="_blank">[DML]</a><a href="https://arxiv.org/abs/2112.01135" target="_blank">[MLUC]</a> -->
-        <li><b>Interpretable AI</b></li><br>
-        <!-- <a href="https://arxiv.org/abs/2409.08083" target="_blank">[SimMAT]</a><a href="https://arxiv.org/abs/2403.17010" target="_blank">[Calib3D]</a><a href="https://arxiv.org/abs/2305.14207" target="_blank">[Segment Any RGBD]</a><a href="https://arxiv.org/abs/2306.09347" target="_blank">[Segment Any Point Cloud]</a><a href="https://arxiv.org/abs/2405.10305" target="_blank">[PSG-4D]</a><a href="https://arxiv.org/abs/2307.04091" target="_blank">[CMDFusion]</a> -->
-        <li><b>Computer Vision</b></li><br>
-        <!-- <a href="https://openreview.net/forum?id=xLr0I_xYGAs" target="_blank">[UOSR]</a><a href="https://arxiv.org/abs/2303.15467" target="_blank">[PSL]</a> -->
-        <!-- <li><b>Continual Learning</b></li>
-        <a href="https://arxiv.org/abs/2403.08568" target="_blank">[CPrompt]</a><a href="https://arxiv.org/abs/2211.00833" target="_blank">[FrameMaker]</a><a href="https://ieeexplore.ieee.org/abstract/document/9665922" target="_blank">[KD-TIL]</a> -->
-      </ul>
-    </div>
-
-    <div style="width: 50%; float:right">
-			<h3>
-				<i class="fa fa-graduation-cap" aria-hidden="true"></i>
-				<strong>Education</strong>
-			</h3>
-			<b>Shanghai Jiao Tong University</b><br>
-			<ul>
-        <li>M.S. in Information and Communication Engineering, Sep. 2023 - Mar. 2026</li>
-        <li>Mentor: <a href="https://min.sjtu.edu.cn/En/FacultyShow/4?Vid=14" target="_blank">Prof. Hongkai Xiong</a> and <a href="https://min.sjtu.edu.cn/En/FacultyShow/4?Vid=20" target="_blank">Prof. Wenrui Dai</a> </li>
-      </ul>
-      <b>Shanghai Jiao Tong University</b><br>
-        <ul>
-          <li>Major: B.S. in Electronic Science and Technology, Sep. 2019 - June. 2023</li>
-          <li>Minor: B.S. in Computer Science and Technology, Sep. 2019 - June. 2023</li>
-        </ul>
-    </div>
-  
-  </div>
-</div>
-
-<!-- <div id="news" class="bio">
-  <h1 class="md-heading text-left">
-    <i class="fa fa-tasks" aria-hidden="true"></i>
-    News
-  </h1>  
-  <ul>
-    	<li class="indented" data-date="[Feb, 2024]"> Give a talk on <a href="https://arxiv.org/pdf/2402.03675.pdf">protein-protein interaction prediction</a> to <a href="https://jian-tang.com/students/">Jian Tang's group</a>. [<a href="files/ppiretrieval.pdf">Slide</a>]</li>
-	<li class="indented" data-date="[Dec, 2023]"> Give a talk on <a href="https://arxiv.org/pdf/2304.14621.pdf">structure-based molecule design</a> at LoG2023 Montreal. [<a href="files/mudiff.pdf">Slide</a>][<a href="https://www.youtube.com/watch?v=Z5l-gaV-DUo">Video</a>]</li>
-    	<li class="indented" data-date="[Nov, 2023]"> One paper accepted to 2nd Learning on Graphs Conference.</li>
-    	<li class="indented" data-date="[Oct, 2023]"> One paper accepted to 37th Conference on Neural Information Processing Systems.</li>
-    	<li class="indented" data-date="[Sep, 2023]"> One paper accepted to 12th International Conference on Complex Networks and their Applications.</li>
-   	<li class="indented" data-date="[Oct, 2022]"> One paper accepted to 36th Conference on Neural Information Processing Systems, GLFrontiers, and selected for <b><span style="color: red;">Oral</span></b> presentation.</li>
-   	<li class="indented" data-date="[Oct, 2022]"> Two papers accepted to 36th Conference on Neural Information Processing Systems, and one paper selected for <b><span style="color: red;">Spotlight</span></b> presentation.</li>
-  </ul>
-</div> -->
-
-
-<div id="publications" class="publications">
-  <h1 class="md-heading text-left">
-    <i class="fa fa-file" aria-hidden="true"></i>
-    Publications (<button class="custom-button" id="show-selected-btn"> Show Representative </button> / <button class="custom-button" id="show-all-btn"> Show All </button>)
-  </h1>
-
-
-  <div class="pub-list">
-
-        <div class="pub" data-selected="true">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/salamander.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              SalaMAnder: Shapley-based Mathematical Expression Attribution and Metric for Chain-of-Thought Reasoning
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                <b>Yue Xin</b>, Chen Shen, Shaotian Yan, Yaoming Wang, Xiaosong Yuan, Chenxi Huang, Jieping Ye
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">EMNLP 2025</span>
-              <span class="place"></span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/abs/2509.16561" target="_blank">Paper</a>]
-            </div>
-          </div>
-        </div>
-	  
-
-	  <div class="pub" data-selected="true">
-      <div class="pub-left">
-        <img class="intro-img frame" src="images/generation.jpg">
-      </div>
-      <div class="pub-right">
-        <div class="title">
-          Generalizable Geometric Image Caption Synthesis
-        </div>
-        <div class="authors">
-          <font style="font-size: 11pt;">
-            <b>Yue Xin*</b>, Wenyuan Wang*, Rui Pan*, Ruida Wang, Howard Meng, Renjie Pi, Shizhe Diao, Tong Zhang
-          </font>
-        </div>
-        <div class="publish">
-          <span class="place">ICLR 2025 on submission</span>
-          <span class="place"></span>
-        </div>
-        <div class="tags">
-          [<a class="tag" href="https://arxiv.org/abs/2509.15217" target="_blank">Paper</a>]
-		  [<a class="tag" href="https://machinephoenix.github.io/GeoReasoning_blog/" target="_blank">Blog</a>]
-		  [<a class="tag" href="https://huggingface.co/datasets/ScaleMath/GeoReasoning" target="_blank">Dataset</a>]
-          [<a class="tag" href="https://github.com/MachinePhoenix/GeoReasoning" target="_blank">Code</a>]
-        </div>
-      </div>
-    </div>
-	  
-
-        <div class="pub" data-selected="false">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/cfu.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-               Parameter-Efficient Cross-Layer Feature Fusion via Chebyshev Polynomial Unit
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                <b>Yue Xin</b>, Jiarui Zhang, Ziyang Zheng, Yaoming Wang, Wenrui Dai, Chenglin Li, Junni Zou, Hongkai Xiong
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">VCIP 2025</span>
-              <span class="place"></span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="works/CFU.pdf" target="_blank">Paper</a>]
-            </div>
-          </div>
-        </div>
-
-        <div class="pub" data-selected="false">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/gleam.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              GLEAM: Global Share Local Transform MoE for Downstream Transferring With Enhanced Parameter Efficiency
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                Jiarui Zhang, <b>Yue Xin</b>, Yaoming Wang, Wenrui Dai, Ziyang Zheng, Chenglin Li, Junni Zou, Hongkai Xiong
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">ECAI 2025</span>
-              <span class="place"></span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://ecai2025.org/accepted-papers/#main_track_accepted_papers" target="_blank">Paper</a>]
-            </div>
-          </div>
-        </div>
-
-        <div class="pub" data-selected="false">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/adv.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              Clarifying the Behavior and the Difficulty of Adversarial Training
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                Xu Cheng*, Hao Zhang*, <b>Yue Xin</b>, Wen Shen, Jie Ren, Quanshi Zhang
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">AAAI 2024</span>
-              <span class="place"></span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://ojs.aaai.org/index.php/AAAI/article/view/29032" target="_blank">Paper</a>]
-            </div>
-          </div>
-        </div>
-
-        <div class="pub" data-selected="false">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/interact.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              Towards the Dynamics of a DNN Learning Symbolic Interactions
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                Qihan Ren, Yang Xu, Junpeng Zhang, <b>Yue Xin</b>, Dongrui Liu, Quanshi Zhang
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">NeurIPS 2024</span>
-              <span class="place"></span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://neurips.cc/virtual/2024/poster/94348" target="_blank">Paper</a>]
-            </div>
-          </div>
-        </div>
-        
-        <div class="pub" data-selected="true">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/crft.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              Enhancing Chain-of-Thought Reasoning with Critical Representation Fine-tuning
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                Chenxi Huang, Shaotian Yan, Liang Xie, Binbin Lin, Sinan Fan, <b>Yue Xin</b>, Deng Cai, Chen Shen, Jieping Ye
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">ACL 2025</span>
-              <span class="place"></span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://aclanthology.org/2025.acl-long.1129/" target="_blank">Paper</a>]
-            </div>
-          </div>
-        </div>
-        
-        <div class="pub">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/rst.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-                D2-RST: Dual-Dimensional Residual Side Tuning for Mitigating Feature Forgetting in Parameter-Efficient Transfer Learning
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                <b>Yue Xin</b>, Yaoming Wang, Wenrui Dai, Jiarui Zhang, Ziyang Zheng, Chenglin Li, Junni Zou, Hongkai Xiong
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">WACV 2026 on submission</span>
-              <span class="place"></span>
-            </div>
-            <div class="tags">
-				[<a class="tag" href="works/D2-RST.pdf" target="_blank">Paper</a>]
-            </div>
-          </div>
-        </div>
-        
-        <div class="pub">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/casunet.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              Towards Noise-Robust Medical Segmentation via Chebyshev-Attention-Based Asymmetric UNet
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                <b>Yue Xin</b>, Ziyang Zheng, Wenrui Dai, Chenglin Li, Junni Zou, Hongkai Xiong
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">WACV 2026 on submission</span>
-              <span class="place"></span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="works/CASUNet.pdf" target="_blank">Paper</a>]
-            </div>
-          </div>
-        </div>
-        
-        <div class="pub" data-selected="true">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              A Technical Report on LLM Distillation
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                <b>Yue Xin</b>, Shaotian Yan, Kaiyuan Liu, Rui Miao, Bing Wang, Sinan Fan, Chen Shen, Jieping Ye
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">Arxiv 2025</span>
-              <span class="place"></span>
-            </div>
-            <div class="tags">
-              <!-- [<a class="tag" href="https://arxiv.org/abs/2307.04091" target="_blank">Paper</a>] -->
-            </div>
-          </div>
-        </div>
-
-
-        <div class="pub" data-selected="true">
-            <div class="pub-left">
-              <img class="intro-img frame" src="images/">
-            </div>
-            <div class="pub-right">
-              <div class="title">
-                Perplexity-Aware Pruning for Efficient Chain-of-Thought Distillation
-              </div>
-              <div class="authors">
-                <font style="font-size: 11pt;">
-                  <b>Yue Xin</b>, Jiaxin Huang
-                  <br>
-                </font>
-              </div>
-              <div class="publish">
-                <span class="place">ICLR 2026 on submission</span>
-                <span class="place"></span>
-              </div>
-              <div class="tags">
-                <!-- [<a class="tag" href="https://arxiv.org/abs/2305.14207" target="_blank">Paper</a>] -->
-              </div>
-            </div>
-          </div>
-
-
-          <div class="pub" data-selected="true">
-            <div class="pub-left">
-              <img class="intro-img frame" src="images/pat.png">
-            </div>
-            <div class="pub-right">
-              <div class="title">
-                  Bootstrap Prompt Learning with Feature Adaptation for Vision-Language Efficient Tuning
-              </div>
-              <div class="authors">
-                <font style="font-size: 11pt;">
-                  Jiarui Zhang, Yaoming Wang, <b>Yue Xin</b>, Wenrui Dai, Ziyang Zheng, Chenglin Li, Junni Zou, Hongkai Xiong
-                  <br>
-                </font>
-              </div>
-              <div class="publish">
-                <span class="place">ICLR 2026 on submission</span>
-                <span class="place"></span>
-              </div>
-              <div class="tags">
-                [<a class="tag" href="works/PAT.pdf" target="_blank">Paper</a>]
-              </div>
-            </div>
-          </div>
-        
-        
-        
-        
-	    
-	      
-      </div>
-    </div>
-
-
-	<!-- <div class="wrapper"> -->
-  <div id="timeline" class="timeline-brief">
-    <h1 class="md-heading text-left">
-      <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-      Research Experiences
-    </h1>
-  
-    <div class="timeline-body">
-      <div class="timeline-item">
-        <div class="timeline-org">
-            <img class="social-icon" src="images/brand/min.svg"/>
-            <a href="https://min.sjtu.edu.cn/" target="_blank">Institute of Media, Information and Network (min), SJTU</a>
-        </div>
-        <div class="timeline-title">
-            Machine Learning and Computer Vision Intern and Master's Student
-          </div>
-        <div class="timeline-date">
-          Nov, 2022 - Present
-        </div>
-        
-        <div class="timeline-desc">
-        <div class="timeline-host">
-          <b> Advised by <a href="https://min.sjtu.edu.cn/En/FacultyShow/4?Vid=14" target="_blank">Prof. Hongkai Xiong</a> and <a href="https://min.sjtu.edu.cn/En/FacultyShow/4?Vid=20" target="_blank">Prof. Wenrui Dai</a>, my researches include:</b>
-            <ul>
-                <li>Proposed Chebyshev Fusion Unit (CFU), a lightweight feature fusion method to mitigate the challenge of balancing expressiveness and efficiency. Specifically, CFU computed high-order Chebyshev polynomial terms between residual and current-layer features to explicitly model complex cross-layer dependencies with minimal parameters. Comprehensive experiments verify its strong approximation and optimization capability. (VCIP 2025 accepted) </li>
-                <li>Proposed Dual-Dimensional Residual Side Tuning (D2-RST) framework to mitigate feature forgetting and progressive spectral decay in deep layers by employing a dual-block side-tuning structure with low-rank linear mapping on aggregated features, and introducing an additional spatial-dimension pathway in parallel with the feature-dimension pathway. The properties and performance of RST are verified through mathematical proof and various experiments. (WACV 2026 on submission) </li>
-                <li>Proposed Chebyshev-Attention-Based Semi-Unet (CASUNet), a noise-resilient framework integrating a Semi-UNet backbone with a novel CPA (Chebyshev Polynomial Aggregation) module by first aggregating hierarchical features then expanding to orthogonal polynomial terms. Theoretical and experimental analysis verify its superior noise immunity and competitive performance. (WACV 2026 on Submission) </li>
-                <li>Proposed GLEAM, an efficient fine-tuning method for large model parameters. This method leverages the high similarity of parameter matrices in LoRA to construct a low-rank decomposition, further reducing the number of parameters required for fine-tuning while enhancing performance. (ECAI 2025 accepted) </li>
-                <li>Proposed PAT, a fault-tolerant multimodal classifier to solve the problem of conflict between prompter learning and adapter tuning. Specifically, it aligns model representations obtained from Soft Prompt and Adapter-based methods and incorporates contrastive learning loss to enhance model performance and generalization. (ICLR 2026 on submission) </li>
-            </ul>
-            <!-- Supervisor: <a href="https://prokia.github.io/">Shuangjia Zheng</a> -->
-          </div>
-        </div>
-        </div>
-      
-  
-      
-      <div class="timeline-item">
-        <div class="timeline-org">
-            <img class="social-icon" src="images/brand/washu.svg"/>
-            <a href="https://washu.edu/" target="_blank">Hint Lab, WashU</a>
-        </div>
-        <div class="timeline-title">
-            LLM Research Intern
-        </div>
-        <div class="timeline-date">
-          Jun, 2025 - Present
-        </div>
-
-        <div class="timeline-desc">
-          <div class="timeline-host">
-            <b>Advised by <a href="https://teapot123.github.io/" target="_blank">Prof. Jiaxin Huang</a>, my researches include:</b>
-            <ul>
-            <li>Proposed a perplexity-based method to analyze the long CoT pattern for data selection, after which removed the steps with low perplexity to construct a new dataset. Then conducted SFT and RL on the dataset to enhance the reasoning capacity of LLMs more efficiently without significant degradation of the output diversity. (ICLR 2026 on submission)</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-  
-      
-      <div class="timeline-item">
-        <div class="timeline-org">
-            <img class="social-icon" src="images/brand/uiuc.svg"/>
-            <a href="https://illinois.edu/" target="_blank">Tong's Lab, UIUC</a>
-        </div>
-        <div class="timeline-title">
-            MLLM Research Intern
-        </div>
-        <div class="timeline-date">  
-          Mar, 2025 - Aug, 2025
-        </div>
-
-        <div class="timeline-desc">
-          <div class="timeline-host">
-            <b>Advised by <a href="https://tongzhang-ml.org/" target="_blank">Prof. Tong Zhang</a>, my researches include:</b>
-            <ul>
-            <li>
-            Proposed Geo-Image-Textualization, a reinforcement learning-based framework to generate high-quality and geometry-centered multimodal data by utilizing a rule-based data generation pipeline and adopting RAFT to further optimize the captions. Then constructed a dataset named GeoReasoning-10K to bridge the gap between visual and linguistic modalities in the geometry domain. Extensive experiments verify the superiority of the dataset for improving multimodal reasoning capacity. (ICLR 2026 on submission)</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="timeline-item">
-        <div class="timeline-org">
-            <img class="social-icon" src="images/brand/aliyun.svg"/>
-            <a href="https://cn.aliyun.com/" target="_blank">Feitian Lab, Alibaba Cloud</a>
-        </div>
-        <div class="timeline-title">
-            LLM Research Intern
-        </div>
-        <div class="timeline-date">
-          Mar, 2025 - Aug, 2025
-        </div>
-
-        <div class="timeline-desc">
-          <div class="timeline-host">
-            <b>Advised by <a href="http://www.yelabs.net/" target="_blank">Prof. Jieping Ye</a>, my researches include:</b>
-            <ul>
-            <li>Proposed SalaMAnder, a Shapley-value-based framework for quantifying component-level contributions in CoT reasoning. Specifically, we develop an efficient stratified sampling algorithm to compute Shapley value for mathematical expression attribution and CoSP (Cardinality of Shapley Positives) metric. Theoretical derivation and comprehensive validation across multiple models and benchmarks present a robust monotonic correlation between CoSP and model performance, providing theoretical explanations for the empirical success of CoT. (EMNLP 2025 accepted)
-            </li>
-            <li>
-            Proposed CRFT, a novel method that identifies and optimizes critical representations that integrate significant information from preceding layers or regulate subsequent layer representations. CRFT effectively optimizes the representations in a low-rank linear subspace through information flow analysis. (ACL 2025 accepted)
-            </li>
-            <li>Explored the mechanism of LLM distillation and explained the pattern of long CoT, after which significantly improved the distilled model's reasoning capacity.
-            </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-
-
-      <div class="timeline-item">
-        <div class="timeline-org">
-            <img class="social-icon" src="images/brand/sjtu.svg"/>
-            <a href="https://sjtu-xai-lab.github.io/" target="_blank">Interpretable ML Lab, SJTU</a>
-        </div>
-        <div class="timeline-title">
-            Interpretable Machine Learning Intern
-        </div>
-        <div class="timeline-date">
-          Feb, 2022 - Nov, 2022
-        </div>
-
-        <div class="timeline-desc">
-          <div class="timeline-host">
-            <b>Advised by <a href="http://qszhang.com/" target="_blank">Prof. Quanshi Zhang</a>, my researches include:</b>
-            <ul>
-            <li>Theoretically derived the analytical solution for multi-step adversarial attacks, which explains the reasons behind the optimization difficulties in adversarial training. This is validated through experimental results. (AAAI 2024 accepted)
-            </li>
-            <li>Theoretically derived the two-stage dynamic interaction process of DNNs, proving that the network learning process gradually encodes interactions of varying complexity. This provides a theoretical foundation for understanding overfitting. (NeurIPS 2024 accepted)
-            </li>
-            <li>Theoretically derived and validated the robustness of concepts with different complexities.
-            </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="timeline-item">
-        <div class="timeline-org">
-            <img class="social-icon" src="images/brand/sjtu.svg"/>
-            <a href="https://www.sjtu.edu.cn/" target="_blank">SunnyLab, SJTU</a>
-        </div>
-        <div class="timeline-title">
-            Machine Learning and Computer Vision Intern
-        </div>
-        <div class="timeline-date">
-          May, 2021 - May, 2022
-        </div>
-
-        <div class="timeline-desc">
-          <div class="timeline-host">
-            <b>Advised by <a href="https://faculty.sjtu.edu.cn/zhangchongyang/zh_CN/index/177811/list/index.htm" target="_blank">Prof. Chongyang Zhang</a>, my researches include:</b>
-            <ul>
-            <li>Developed a Swin Transformer-based model to implement instance segmentation of the workpiece welding area.
-            </li>
-            <li>Designed a space-time filter to remove false positive samples in pedestrian detection. 
-            </li>
-            <li>Developed a YOLOv5-based model to detect tower cranes, recognize dangerous tower cranes, and label the  electronic fence.
-            </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-  
-      
-      
-  
-    <br>
-  </div>
-  </div>
-
-
-  <div id="timeline2" class="timeline-brief">
-    <h1 class="md-heading text-left">
-      <i class="fa fa-gears" aria-hidden="true"></i>
-      Engineering Experiences
-    </h1>
-
-    <div class="timeline-body">
-        <div class="timeline-item">
-          <div class="timeline-org">
-              <img class="social-icon" src="images/brand/ql.svg"/>
-              <a href="https://www.70capital.com/" target="_blank">Qilin Investment</a>
-          </div>
-          <div class="timeline-title">
-            Quantitative Strategy Research and Machine Learning Intern
-            </div>
-          <div class="timeline-date">
-            Oct, 2024 - Jan, 2025
-          </div>
-          
-          <div class="timeline-desc">
-          <div class="timeline-host">
-            <b> My research and engineering projects include:</b>
-              <ul>
-                  <li>Developed various models to complete intraday prediction tasks, surpassing the baseline model in global domains (A-shares) and improving performance in live trading within three weeks. Conducted ablation studies on the model to explain the reasons for performance improvement and validate its generalizability. </li>
-                  <li>Fine-tuned the above model to enhance performance by 10% in local domains (ZZ800 and ZZ1000) while maintaining minimal decrease in overall performance. </li>
-              </ul>
-              <!-- Supervisor: <a href="https://prokia.github.io/">Shuangjia Zheng</a> -->
-            </div>
-          </div>
-          </div>
-
-          </div>
-    </div>
-
-
-    <div id="competitions" class="timeline-brief">
-        <h1 class="md-heading text-left">
-          <i class="fa fa-trophy" aria-hidden="true"></i>
-          Competitions
-        </h1>
-    
-        <div class="timeline-body">
-            <div class="timeline-item">
-              <div class="timeline-org">
-                  <img class="social-icon" src="images/brand/yan.svg"/>
-                  <a href="https://cpipc.acge.org.cn/cw/hp/4" target="_blank">The 20th Chinese Graduate Mathematical Modeling Competition</a>
-              </div>
-              <div class="timeline-title">
-                Nation level, Second Prize
-                </div>
-              <div class="timeline-date">
-                Jan, 2023
-              </div>
-              </div>
-    
-              </div>
-        </div>
-
-    
-</div>
-  </div>
-</div>
-</div>
-	
-<!-- JavaScript to handle button clicks -->
-<script>
-  // Get the buttons and publications
-  const showSelectedBtn = document.getElementById('show-selected-btn');
-  const showAllBtn = document.getElementById('show-all-btn');
-  const publications = document.querySelectorAll('.pub');
-
-  // Add event listener to 'Show Selected Publication' button
-  showSelectedBtn.addEventListener('click', function() {
-    publications.forEach(pub => {
-      if (pub.getAttribute('data-selected') === 'true') {
-        pub.style.display = 'block';  // Show selected publication
-      } else {
-        pub.style.display = 'none';  // Hide other publications
-      }
-    });
-  });
-
-  // Add event listener to 'Show All' button
-  showAllBtn.addEventListener('click', function() {
-    publications.forEach(pub => {
-      pub.style.display = 'block';  // Show all publications
-    });
-  });
-</script>
-
-<script>
-  const repos = [
-    { owner: "alibaba-damo-academy", repo: "WorldVLA", starId: "star-count", forkId: "fork-count" },
-    { owner: "GAI4Manipulation", repo: "AwesomeGAIManipulation", starId: "star-count-2", forkId: "fork-count-2" },
-    { owner: "Jun-CEN", repo: "CMDFusion", starId: "star-count-3", forkId: "fork-count-3" },
-    { owner: "Jun-CEN", repo: "SegmentAnyRGBD", starId: "star-count-4", forkId: "fork-count-4" },
-    { owner: "Jun-CEN", repo: "PSL", starId: "star-count-5", forkId: "fork-count-5" },
-    { owner: "Jun-CEN", repo: "Unified-Open-Set-Recognition", starId: "star-count-6", forkId: "fork-count-6" },
-    { owner: "Jun-CEN", repo: "Open-world-3D-semantic-segmentation", starId: "star-count-7", forkId: "fork-count-7" },
-    { owner: "Jun-CEN", repo: "Open-World-Semantic-Segmentation", starId: "star-count-8", forkId: "fork-count-8" },
-    { owner: "Jingkang50", repo: "PSG4D", starId: "star-count-9", forkId: "fork-count-9" },
-    { owner: "youquanl", repo: "Segment-Any-Point-Cloud", starId: "star-count-10", forkId: "fork-count-10" }
-  ];
-
-  async function loadGitHubStats() {
-    for (const { owner, repo, starId, forkId } of repos) {
-      try {
-        const res = await fetch(`https://api.github.com/repos/${owner}/${repo}`);
-        if (!res.ok) throw new Error("GitHub API error");
-        const data = await res.json();
-        document.getElementById(starId).innerText = data.stargazers_count ?? "–";
-        document.getElementById(forkId).innerText = data.forks_count ?? "–";
-      } catch (e) {
-        console.error(`Failed to load stats for ${owner}/${repo}`, e);
-        document.getElementById(starId).innerText = "–";
-        document.getElementById(forkId).innerText = "–";
-      }
-    }
-  }
-
-  loadGitHubStats();
-</script>
-
-
-<div class="wrapper">
-  <div id="awards" class="bio">
-    <h1 class="md-heading text-left">
-      <i class="fa fa-tasks" aria-hidden="true"></i>
-      Selected Honors & Awards
-    </h1>
-    <ul>
-  	<li> <a href="images/RI.jpeg" target="_blank">Outstanding Research Intern, Alibaba Group, 2023.</a> (15 candidates per year)</li>
-	<li> Overseas Research Award, HKUST, 2023.</li>
-	<li> Postgraduate Studentship, HKUST, 2020-2024.</li>
-	<li> School of Engineering Excellent Student Scholarship, HKUST, 2019-2020.</li>
-	<li> School of Engineering Entrance Scholarship, HKUST, 2019-2020.</li>
-    </ul>
-  </div>
-</div>
-
-<style>
-  .reviewer-section {
+}
+
+.wrapper:after,
+.footer-col-wrapper:after,
+.cover:after,
+.profile-wrapper:after {
+    content: "";
+    display: table;
+    clear: both
+}
+
+.text-grey-light {
+    color: #e8e8e8
+}
+
+.text-grey-bright {
+    color: #fff
+}
+
+.text-grey {
+    color: #828282
+}
+
+.site-header {
+    border-top: 3px solid #9b3022;
+    border-bottom: 1px solid #9b3022;
+    min-height: 56px;
+    position: relative
+}
+
+.site-title {
+    font-size: 28px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif, Helvetica;
+    line-height: 56px;
+    letter-spacing: -1px;
+    margin-bottom: 0;
+    float: left
+}
+
+.site-title,
+.site-title:visited {
+    color: #002336
+}
+
+.site-nav {
     display: flex;
-    flex-wrap: wrap;
-    margin-top: 8px;
-  }
+    justify-content: center; /* This centers the links horizontally */
+    align-items: center;      /* Aligns them vertically */
+    line-height: 56px;
+    z-index: 3;
+}
 
-  .reviewer-column {
-    flex: 1 1 50%;
-    box-sizing: border-box;
-    padding-right: 20px;
-    font-size: 0.85em; /* 字体略微变小 */
-    line-height: 1.6;
-    position: relative;
-    padding-left: 1em;
-    margin-bottom: 4px;
-  }
+/* .site-nav {
+    float: right;
+    line-height: 56px;
+    z-index: 3
+} */
 
-  .reviewer-column::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: #555;
-  }
+.site-nav .menu-icon {
+    display: none
+}
 
-  @media (max-width: 600px) {
-    .reviewer-column {
-      flex: 1 1 100%;
+.site-nav .page-link {
+    font-weight: 400;
+    color: #002336;
+    line-height: 1.5
+}
+
+.site-nav .page-link:not(:first-child) {
+    margin-left: 20px
+}
+
+@media screen and (max-width: 600px) {
+    .site-nav {
+        position: absolute;
+        top: 9px;
+        right: 30px;
+        background-color: #f9f9f9;
+        border: 1px solid #e8e8e8;
+        border-radius: 5px;
+        text-align: right
     }
-  }
 
-  .reviewer-title {
-    margin-top: 12px;
+    .site-nav .menu-icon {
+        display: block;
+        float: right;
+        width: 36px;
+        height: 26px;
+        line-height: 0;
+        padding-top: 10px;
+        text-align: center
+    }
+
+    .site-nav .menu-icon>svg {
+        width: 18px;
+        height: 15px
+    }
+
+    .site-nav .menu-icon>svg path {
+        fill: #113f7c
+    }
+
+    .site-nav .trigger {
+        clear: both;
+        display: none
+    }
+
+    .site-nav:hover .trigger {
+        display: block;
+        padding-bottom: 5px
+    }
+
+    .site-nav .page-link {
+        font-weight: 400;
+        display: block;
+        padding: 5px 10px
+    }
+}
+
+.site-footer {
+    border-top: 1px solid #9b3022;
+    padding: 30px 0
+}
+
+.footer-heading {
+    font-size: 18px;
+    margin-bottom: 15px
+}
+
+.contact-list,
+.social-media-list {
+    list-style: none;
+    margin-left: 0
+}
+
+.footer-col-wrapper {
+    font-size: 16px;
+    color: #828282;
+    margin-left: -15px
+}
+
+.footer-col {
+    float: left;
+    margin-bottom: 15px;
+    padding-left: 15px
+}
+
+.footer-col-1 {
+    width: -webkit-calc(25% - (30px / 2));
+    width: calc(25% - (30px / 2))
+}
+
+.footer-col-2 {
+    width: -webkit-calc(35% - (30px / 2));
+    width: calc(35% - (30px / 2))
+}
+
+.footer-col-3 {
+    width: -webkit-calc(40% - (30px / 2));
+    width: calc(40% - (30px / 2))
+}
+
+@media screen and (max-width: 800px) {
+
+    .footer-col-1,
+    .footer-col-2 {
+        width: -webkit-calc(50% - (30px / 2));
+        width: calc(50% - (30px / 2))
+    }
+
+    .footer-col-3 {
+        width: -webkit-calc(100% - (30px / 2));
+        width: calc(100% - (30px / 2))
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .footer-col {
+        float: none;
+        width: -webkit-calc(100% - (30px / 2));
+        width: calc(100% - (30px / 2))
+    }
+}
+
+.page-content {
+    padding: 30px 0
+}
+
+.text-center {
+    text-align: center
+}
+
+.sm-heading {
+    font-size: 22px;
+    font-color: #9b3022;
+    font-weight: 300
+}
+
+.md-heading {
+    font-size: 26px;
+    font-color: #9b3022;
+    font-weight: 400
+}
+
+.lg-heading {
+    font-size: 32px;
+    font-color: #9b3022;
+    font-weight: 600
+}
+
+.custom-button {
+    font-size: 20px; /* Larger font size */
+    background-color: transparent; /* Transparent background */
+    border: none; /* Remove border */
+    cursor: pointer; /* Pointer cursor on hover */
+    color: #0077B5; /* Text color */
+    padding: 5px 5px; /* Add padding */
+    outline: none; /* Remove focus outline */
+}
+
+.custom-button:hover {
+    color: #0056b3; /* Darker color on hover */
+    text-decoration: none; /* Remove underline on hover */
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+
+.button {
+    padding: 10px;
+    margin-top: 25px
+}
+
+.button a {
+    border: solid 1px #e0e0e0;
+    border-radius: 0.2rem;
+    color: #868686;
+    display: inline-block;
+    text-align: center;
+    padding: 0.5rem 2.0rem;
+    text-decoration: none
+}
+
+.button em {
+    border: solid 1px #e0e0e0;
+    border-radius: 0.2rem;
+    color: #868686;
+    display: inline-block;
+    text-align: center;
+    padding: 0.5rem 0.9rem
+}
+
+.button>.heading>a:hover {
+    color: #fff;
+    background-color: #292929;
+    border: solid 1px #292929
+}
+
+.highlight {
+    background: #fff
+}
+
+.highlight .c {
+    color: #998;
+    font-style: italic
+}
+
+.highlight .err {
+    color: #a61717;
+    background-color: #e3d2d2
+}
+
+.highlight .k {
+    font-weight: bold
+}
+
+.highlight .o {
+    font-weight: bold
+}
+
+.highlight .cm {
+    color: #998;
+    font-style: italic
+}
+
+.highlight .cp {
+    color: #999;
+    font-weight: bold
+}
+
+.highlight .c1 {
+    color: #998;
+    font-style: italic
+}
+
+.highlight .cs {
+    color: #999;
     font-weight: bold;
-  }
-</style>
+    font-style: italic
+}
+
+.highlight .gd {
+    color: #000;
+    background-color: #fdd
+}
+
+.highlight .gd .x {
+    color: #000;
+    background-color: #faa
+}
+
+.highlight .ge {
+    font-style: italic
+}
+
+.highlight .gr {
+    color: #a00
+}
+
+.highlight .gh {
+    color: #999
+}
+
+.highlight .gi {
+    color: #000;
+    background-color: #dfd
+}
+
+.highlight .gi .x {
+    color: #000;
+    background-color: #afa
+}
+
+.highlight .go {
+    color: #888
+}
+
+.highlight .gp {
+    color: #555
+}
+
+.highlight .gs {
+    font-weight: bold
+}
+
+.highlight .gu {
+    color: #aaa
+}
+
+.highlight .gt {
+    color: #a00
+}
+
+.highlight .kc {
+    font-weight: bold
+}
+
+.highlight .kd {
+    font-weight: bold
+}
+
+.highlight .kp {
+    font-weight: bold
+}
+
+.highlight .kr {
+    font-weight: bold
+}
+
+.highlight .kt {
+    color: #458;
+    font-weight: bold
+}
+
+.highlight .m {
+    color: #099
+}
+
+.highlight .s {
+    color: #d14
+}
+
+.highlight .na {
+    color: teal
+}
+
+.highlight .nb {
+    color: #0086B3
+}
+
+.highlight .nc {
+    color: #458;
+    font-weight: bold
+}
+
+.highlight .no {
+    color: teal
+}
+
+.highlight .ni {
+    color: purple
+}
+
+.highlight .ne {
+    color: #900;
+    font-weight: bold
+}
+
+.highlight .nf {
+    color: #900;
+    font-weight: bold
+}
+
+.highlight .nn {
+    color: #555
+}
+
+.highlight .nt {
+    color: navy
+}
+
+.highlight .nv {
+    color: teal
+}
+
+.highlight .ow {
+    font-weight: bold
+}
+
+.highlight .w {
+    color: #bbb
+}
+
+.highlight .mf {
+    color: #099
+}
+
+.highlight .mh {
+    color: #099
+}
+
+.highlight .mi {
+    color: #099
+}
+
+.highlight .mo {
+    color: #099
+}
+
+.highlight .sb {
+    color: #d14
+}
+
+.highlight .sc {
+    color: #d14
+}
+
+.highlight .sd {
+    color: #d14
+}
+
+.highlight .s2 {
+    color: #d14
+}
+
+.highlight .se {
+    color: #d14
+}
+
+.highlight .sh {
+    color: #d14
+}
+
+.highlight .si {
+    color: #d14
+}
+
+.highlight .sx {
+    color: #d14
+}
+
+.highlight .sr {
+    color: #009926
+}
+
+.highlight .s1 {
+    color: #d14
+}
+
+.highlight .ss {
+    color: #990073
+}
+
+.highlight .bp {
+    color: #999
+}
+
+.highlight .vc {
+    color: teal
+}
+
+.highlight .vg {
+    color: teal
+}
+
+.highlight .vi {
+    color: teal
+}
+
+.highlight .il {
+    color: #099
+}
+
+.cover {
+    max-width: 100%;
+    height: 320px;
+    z-index: initial;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 0px;
+    padding-left: 0px
+}
+
+@media screen and (max-width: 800px) {
+    .cover {
+        max-width: -webkit-calc(1024px - (30px));
+        max-width: calc(1024px - (30px));
+        padding-right: 15px;
+        padding-left: 15px
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .cover {
+        height: 400px
+    }
+}
+
+.shallow-bg {
+    /* background-image: url("images/background/background1.JPG"); */
+    background-image: url("images/background/background_hkust_2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center
+}
+
+.deep-bg {
+    background-image: url("images/background/background2.JPG");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center
+}
+
+.profile-wrapper {
+    border-radius: 25px;
+    position: relative;
+    top: 20%;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto
+}
+
+@media screen and (max-width: 600px) {
+    .profile-wrapper {
+        top: 5%;
+        border-radius: 25px;
+        position: relative;
+        width: -webkit-calc(90% - (30px / 2));
+        width: calc(90% - (30px / 2));
+        margin-left: auto;
+        margin-right: auto
+    }
+}
+
+.wrapper-light {
+    background-color: rgba(255, 255, 255, 0.8)
+}
+
+.wrapper-dark {
+    background-color: rgba(150, 150, 150, 0.8)
+}
+
+.profile-col {
+    float: left !important;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center
+}
+
+.profile-col-1 {
+    width: -webkit-calc(40% - (30px / 2));
+    width: calc(40% - (30px / 2))
+}
+
+.profile-col-2 {
+    width: -webkit-calc(60% - (30px / 2));
+    width: calc(60% - (30px / 2))
+}
+
+@media screen and (max-width: 800px) {
+
+    .profile-col-1,
+    .profile-col-2 {
+        width: -webkit-calc(50% - (30px / 2));
+        width: calc(50% - (30px / 2))
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .profile-col {
+        position: relative;
+        margin: 10px auto;
+        float: none;
+        width: -webkit-calc(100%);
+        width: calc(100%)
+    }
+}
+
+.circle-img {
+    margin: 0px auto;
+    width: 168px;
+    border-width: 4px;
+    border-style: solid;
+    border-radius: 50%
+}
+
+.border-dark {
+    border-color: #292929
+}
+
+.border-bright {
+    border-color: #fff
+}
+
+.border-light {
+    border-color: #e8e8e8
+}
+
+.circle-img-light {
+    margin: 0px auto;
+    width: 168px;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 50%
+}
+
+#my-name {
+    font-size: 32px;
+    font-weight: bold;
+    color: #292929
+}
+
+#my-title {
+    font-size: 20px;
+    color: #292929;
+    font-weight: 200
+}
+
+#my-email {
+    font-size: 16px;
+    color: #292929;
+    font-weight: 160
+}
+
+#my-desc-title {
+    font-size: 28px;
+    color: #fff;
+    font-weight: bold
+}
+
+#my-desc-content {
+    font-size: 18px;
+    color: #e8e8e8;
+    font-weight: 200
+}
+
+@media screen and (max-width: 600px) {
+    #my-title {
+        display: none
+    }
+}
+
+.preview {
+    text-overflow: ellipsis;
+    overflow: hidden
+}
+
+.hide {
+    display: none
+}
+
+.maxim {
+    background-color: #e8e8e8;
+    margin: 10px 10px 10px 10px;
+    padding: 10px 10px 10px 20px;
+    border-radius: 4px;
+    color: #002336
+}
+
+@media screen and (max-width: 600px) {
+    .maxim {
+        padding: 2px;
+        margin: 2px
+    }
+}
+
+.maxim>div>strong,
+.maxim>p>strong,
+.maxim>strong {
+    color: #9b3022
+}
+
+.maxim>div>b,
+.maxim>p>b,
+.maxim>b {
+    color: #00a200
+}
+
+.maxim>div>s,
+.maxim>s {
+    color: #00a200
+}
+
+.maxim>div>em,
+.maxim>em {
+    color: #002336;
+    font-weight: 400
+}
+
+.maxim>div>i,
+.maxim>i {
+    color: #0077B5;
+    font-weight: 400
+}
+
+.maxim>div>u,
+.maxim>u {
+    color: #4d004d;
+    font-weight: 400
+}
+
+.maxim>div {
+    margin: 5px
+}
+
+.text-right {
+    text-align: right
+}
+
+.text-left {
+    text-align: left
+}
+
+.text-center {
+    text-align: center
+}
+
+hr.soft {
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, transparent, rgba(0, 0, 0, 0.75), transparent);
+    background-image: -moz-linear-gradient(left, transparent, rgba(0, 0, 0, 0.75), transparent);
+    background-image: -ms-linear-gradient(left, transparent, rgba(0, 0, 0, 0.75), transparent);
+    background-image: -o-linear-gradient(left, transparent, rgba(0, 0, 0, 0.75), transparent);
+    padding: 0;
+    margin: 0
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 2em;
+    right: 0px;
+    text-decoration: none;
+    color: #35DACA;
+    background-color: rgba(235, 235, 235, 0.8);
+    font-size: 16px;
+    font-weight: bold;
+    padding: 1em;
+    display: none
+}
+
+.back-to-top:hover {
+    background-color: rgba(135, 135, 135, 0.5)
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    display: inline-block
+}
+
+.icon-button {
+    background-color: white;
+    border-radius: 3.6rem;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 2.0rem;
+    height: 3.6rem;
+    line-height: 3.6rem;
+    margin: 0 5px;
+    position: relative;
+    text-align: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 3.6rem
+}
+
+.icon-button span {
+    border-radius: 0;
+    display: block;
+    height: 0;
+    left: 50%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    width: 0
+}
+
+.icon-button:hover span {
+    width: 3.6rem;
+    height: 3.6rem;
+    border-radius: 3.6rem;
+    margin: -1.8rem
+}
+
+.twitter span {
+    background-color: #4099ff
+}
+
+.facebook span {
+    background-color: #3B5998
+}
+
+.linkedin span {
+    background-color: #0077B5
+}
+
+.github span {
+    background-color: #000
+}
+
+.icon-button i {
+    background: none;
+    color: white;
+    height: 3.6rem;
+    left: 0;
+    line-height: 3.6rem;
+    position: absolute;
+    top: 0;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    width: 3.6rem;
+    z-index: 10
+}
+
+.icon-button .icon-twitter {
+    color: #4099ff
+}
+
+.icon-button .icon-facebook {
+    color: #3B5998
+}
+
+.icon-button .icon-github {
+    color: #000
+}
+
+.icon-button .icon-linkedin {
+    color: #0077B5
+}
 
 
+.icon-button:hover .icon-twitter,
+.icon-button:hover .icon-facebook,
+.icon-button:hover .icon-github,
+.icon-button:hover .icon-linkedin {
+    color: white
+}
 
-<div style="display: flex; justify-content: center; align-items: center;">
-  <div style="max-width: 400px; width: 100%;">
-    <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=K9NLvpbM7GH1cTCvhvVlo4LW5p-d2mRZYw6UhrAFw0g&cl=ffffff&w=a"></script>
-  </div>
-</div>
+.timeline-brief,
+.timeline {
+    font-family: 'Roboto', sans-serif, Helvetica;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 22px;
+    font-weight: 400;
+}
 
+.timeline-body {
+    padding: 0;
+}
 
-<footer class="site-footer">
-  <div class="wrapper">
-    <div class="footer-col-wrapper">
-      <div class="footer-col  footer-col-1">
-        <ul class="contact-list">
-          <li>Personal Email:</li>
-          <li><a href="mailto:">xinyuexiong [at] sjtu.edu.cn</a></li>
-        </ul>
-      </div>
+.timeline-start {
+    width: -webkit-calc(100% - 2 * (20px));
+    width: calc(100% - 2 * (20px));
+    text-align: center;
+    padding: 20px;
+}
 
-      <div class="footer-col  footer-col-2">
-          <a href="https://scholar.google.com/citations?user=AAMp54AAAAAJ&hl=zh-CN" target="_blank" class="icon-button github">
-          <i class="ai ai-google-scholar-square icon-github"></i>
-            <span></span>
-          </a>
+.timeline-item {
+    width: calc(100% - 40px); /* 调整宽度，移除为时间轴预留的空间 */
+    margin: 0 auto 20px auto; /* 居中显示，移除左边距 */
+    padding: 20px;
+    text-align: left;
+    position: relative;
+    /* 保留边框和阴影效果 */
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
 
-          <a href="https://github.com/MachinePhoenix" target="_blank" class="icon-button github">
-            <i class="fa fa-github icon-github"></i>
-            <span></span>
-          </a>
+/* 悬停效果 */
+.timeline-item:hover {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+    border-color: #bbb;
+}
 
-          <!-- <a href="https://www.linkedin.com/in/jun-cen-45b995219/" target="_blank" class="icon-button linkedin">
-            <i class="fa fa-linkedin icon-linkedin"></i>
-            <span></span>
-          </a> -->
-         
-          <a href="data/Academic_CV_en.pdf" target="_blank" class="icon-button github">
-            <i class="ai ai-cv icon-github"></i>
-            <span></span>
-          </a>
-      </div>
-	<div class="footer-col footer-col-3">
-    	<!--<a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fwillhua127.github.io&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a> -->
-	<!-- <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?user=Lxe71v4AAAAJ&hl=en&url=https%3A%2F%2Fscholar.google.com%2Fcitations&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a> -->
-		<p class="text">Last updated: Oct, 2025.<br>The style of this website is borrowed from <a href='http://cen-jun.com/' target="_blank">Jun Cen's</a>.</p>
-	</div>
-  </div>
-  </div>
+.timeline-item:before,
+.timeline-item:nth-child(odd):before,
+.timeline-item:nth-child(even):before,
+.timeline-item:nth-child(odd):after,
+.timeline-item:nth-child(even):after,
+.timeline > .timeline-body > .timeline-item:last-child:after,
+.timeline-start:after {
+    display: none;
+}
 
-</footer>
-    <div class="back-to-top">Top</div>
+.timeline-item:nth-child(odd),
+.timeline-item:nth-child(even) {
+    margin: 0 auto 20px auto;
+    padding: 20px;
+    text-align: left;
+    border-left: none; /* 移除左边框 */
+    border-right: none;
+}
 
+/* 新增机构行样式 */
+.timeline-org {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #113f7c;
+}
 
-<script type="text/javascript">
-jQuery(document).ready(function() {
-    var offset = 220;
-    var duration = 500;
-    jQuery(window).scroll(function() {
-        if (jQuery(this).scrollTop() > offset) {
-            jQuery('.back-to-top').fadeIn(duration);
-        } else {
-            jQuery('.back-to-top').fadeOut(duration);
+.timeline-org .social-icon {
+    margin-right: 10px;
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.timeline-date {
+    font-size: 16px;
+    font-weight: 500;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.timeline-title {
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    color: #9b3022;
+    margin-bottom: 8px;
+}
+
+.timeline-desc {
+    font-size: 18px;
+    font-weight: 200;
+}
+
+.timeline-host {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* 移除最后一个项目的特殊样式 */
+.timeline > .timeline-body > .timeline-item:last-child:nth-child(even),
+.timeline > .timeline-body > .timeline-item:last-child:nth-child(odd) {
+    vertical-align: middle;
+    min-height: auto; /* 移除固定高度 */
+    border-left: none; /* 移除虚线边框 */
+    border-right: none;
+}
+
+@media screen and (max-width: 600px) {
+    .timeline-start {
+        min-height: auto; /* 移除固定高度 */
+        padding: 20px;
+        text-align: center;
+        border-left: none; /* 移除虚线边框 */
+        width: calc(100% - 40px);
+        margin: 0 auto 20px auto;
+    }
+
+    .timeline-item,
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        min-height: 0;
+        text-align: left;
+        border-left: none; /* 移除左边框 */
+        border-right: none;
+        width: calc(100% - 40px);
+        padding: 15px;
+        margin: 0 auto 20px auto;
+    }
+
+    .timeline > .timeline-body > .timeline-item:last-child:nth-child(odd),
+    .timeline > .timeline-body > .timeline-item:last-child:nth-child(even) {
+        min-height: 0;
+        text-align: left;
+        border-left: none; /* 移除左边框 */
+        border-right: none;
+        width: calc(100% - 40px);
+        padding: 15px;
+        margin: 0 auto 20px auto;
+    }
+
+    .timeline-org {
+        font-size: 18px;
+    }
     
-        }
-    });
-    jQuery('.back-to-top').click(function(event) {
-        event.preventDefault();
-        jQuery('html, body').animate({scrollTop: 0}, duration);
-        return false;
-    })
-});
-</script>
-  </body>
+    .timeline-org .social-icon {
+        width: 28px;
+        height: 28px;
+    }
 
-<!--
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    .timeline-date {
+        font-size: 14px;
+    }
 
-  ga('create', 'UA-60071442-1', 'auto');
-  ga('send', 'pageview');
-</script>
--->
+    .timeline-title {
+        font-size: 18px;
+    }
 
-<!--<script src="custom-pub.js"></script>-->
-</html>
+    .timeline-desc {
+        font-size: 14px;
+    }
+
+    .timeline-host {
+        font-size: 12px;
+    }
+}
+
+.toy-list {
+    margin-left: 0;
+    list-style: none
+}
+
+.toy-list>li {
+    margin-bottom: 30px
+}
+
+.toy-heading {
+    font-size: 42px;
+    font-weight: 300;
+    letter-spacing: -1px;
+    line-height: 1.5;
+    border-bottom: 2px solid #424242
+}
+
+.toy-item {
+    border: thin solid #c0c0c0;
+    text-align: center
+}
+
+.toy-meta {
+    font-size: 14px;
+    color: #828282
+}
+
+.toy-link {
+    display: block;
+    font-size: 24px
+}
+
+.toy-header {
+    margin-bottom: 30px
+}
+
+.toy-title {
+    font-size: 42px;
+    letter-spacing: -1px;
+    line-height: 1
+}
+
+@media screen and (max-width: 800px) {
+    .toy-title {
+        font-size: 36px
+    }
+}
+
+.toy-content {
+    margin-bottom: 30px
+}
+
+.toy-content h2 {
+    font-size: 32px
+}
+
+@media screen and (max-width: 800px) {
+    .toy-content h2 {
+        font-size: 28px
+    }
+}
+
+.toy-content h3 {
+    font-size: 26px
+}
+
+@media screen and (max-width: 800px) {
+    .toy-content h3 {
+        font-size: 22px
+    }
+}
+
+.toy-content h4 {
+    font-size: 20px
+}
+
+@media screen and (max-width: 800px) {
+    .toy-content h4 {
+        font-size: 18px
+    }
+}
+
+.count-down-digit {
+    font-size: 28px
+}
+
+@media screen and (max-width: 800px) {
+    .count-down-digit {
+        font-size: 20px
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .count-down-digit {
+        font-size: 24px
+    }
+}
+
+.count-down-heading {
+    font-size: 50px
+}
+
+@media screen and (max-width: 800px) {
+    .count-down-heading {
+        font-size: 40px
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .count-down-heading {
+        font-size: 30px
+    }
+}
+
+.count-down {
+    width: 100%;
+    height: 40%;
+    text-align: center;
+    font-size: 20px
+}
+
+.hidden {
+    display: none
+}
+
+li.float-right {
+    float: right
+}
+
+li.float-left {
+    float: left
+}
+
+div.paginate-container {
+    background: #f9f9f9;
+    padding: 1rem;
+    margin-top: 3rem;
+    border-radius: 0.2rem;
+    text-align: center;
+    width: -webkit-calc(100% - 2rem);
+    width: calc(100% - 2rem)
+}
+
+div.paginate-container ul {
+    width: 100%;
+    margin: 0px;
+    padding-left: 0px
+}
+
+.pagination>ul,
+.pagination>ul>li {
+    list-style: none;
+    display: inline-block;
+    padding-left: 0px
+}
+
+.pagination>ul>li:hover a {
+    color: #fff;
+    background-color: #292929;
+    border: solid 1px #292929
+}
+
+.pagination>ul>li.active a {
+    color: #fff;
+    background-color: #292929;
+    border: solid 1px #292929
+}
+
+.pagination>ul>li.deactive a {
+    background-color: #e8e8e8;
+    border: solid 1px #f2f2f2
+}
+
+.pagination>ul>li a {
+    border: solid 1px #e0e0e0;
+    border-radius: 0.2rem;
+    color: #868686;
+    display: inline-block;
+    text-align: center;
+    padding: 0.5rem 0.9rem
+}
+
+.pagination>ul>li em {
+    border: solid 1px #e0e0e0;
+    border-radius: 0.2rem;
+    color: #868686;
+    display: inline-block;
+    text-align: center;
+    padding: 0.5rem 0.9rem
+}
+
+div.paginate-container li:first-child a {
+    display: inline-block
+}
+
+div.paginate-container li:first-child a:after {
+    content: "First page"
+}
+
+div.paginate-container li:nth-child(2) a {
+    display: inline-block
+}
+
+div.paginate-container li:nth-child(3) a {
+    display: inline-block
+}
+
+div.paginate-container li:nth-child(4) a {
+    display: inline-block
+}
+
+div.paginate-container li:nth-child(5) a {
+    display: inline-block
+}
+
+div.paginate-container li:nth-child(6) a {
+    display: inline-block
+}
+
+div.paginate-container li:nth-child(7) a {
+    display: inline-block
+}
+
+div.paginate-container li:nth-child(8) a {
+    display: inline-block
+}
+
+div.paginate-container li:nth-child(9) a {
+    display: inline-block
+}
+
+div.paginate-container li:nth-child(10) a {
+    display: inline-block
+}
+
+div.paginate-container li:nth-child(11) a {
+    display: inline-block
+}
+
+div.paginate-container li:nth-child(12) a {
+    display: inline-block
+}
+
+div.paginate-container li:nth-child(2) a {
+    display: inline-block
+}
+
+div.paginate-container li:nth-child(2) a:after {
+    content: "<"
+}
+
+div.paginate-container li:last-child a {
+    display: inline-block
+}
+
+div.paginate-container li:last-child a:after {
+    content: ">"
+}
+
+div.paginate-container li:nth-last-child(2) a {
+    display: inline-block
+}
+
+div.paginate-container li:nth-last-child(2) a:after {
+    content: "Last page"
+}
+
+@media screen and (max-width: 800px) {
+    div.paginate-container li:first-child {
+        display: inline-block
+    }
+
+    div.paginate-container li:first-child a:after {
+        content: "First"
+    }
+
+    div.paginate-container li:nth-child(2) {
+        display: inline-block
+    }
+
+    div.paginate-container li:nth-child(2) a:after {
+        content: "<"
+    }
+
+    div.paginate-container li:last-child {
+        display: inline-block
+    }
+
+    div.paginate-container li:last-child a:after {
+        content: ">"
+    }
+
+    div.paginate-container li:nth-last-child(2) {
+        display: inline-block
+    }
+
+    div.paginate-container li:nth-last-child(2) a:after {
+        content: "Last"
+    }
+}
+
+@media screen and (max-width: 600px) {
+    div.paginate-container li {
+        display: none
+    }
+
+    div.paginate-container li:nth-child(2) a {
+        display: inline-block
+    }
+
+    div.paginate-container li:nth-child(3) a {
+        display: inline-block
+    }
+
+    div.paginate-container li:nth-child(4) a {
+        display: inline-block
+    }
+
+    div.paginate-container li:nth-child(5) a {
+        display: inline-block
+    }
+
+    div.paginate-container li.active {
+        display: inline
+    }
+
+    div.paginate-container li:first-child {
+        display: inline
+    }
+
+    div.paginate-container li:first-child a:after {
+        content: "First"
+    }
+
+    div.paginate-container li:nth-last-child(2) {
+        display: inline
+    }
+
+    div.paginate-container li:nth-last-child(2) a:after {
+        content: "Last"
+    }
+
+    div.paginate-container li:nth-child(2) {
+        display: inline
+    }
+
+    div.paginate-container li:nth-child(2) a:after {
+        content: "<"
+    }
+
+    div.paginate-container li:last-child {
+        display: inline
+    }
+
+    div.paginate-container li:last-child a:after {
+        content: ">"
+    }
+}
+
+.publications {
+    max-width: -webkit-calc(100% - (30px / 2));
+    max-width: calc(100% - (30px / 2));
+    margin-top: 10px;
+    font-family: 'Roboto', sans-serif, Helvetica
+}
+
+.pub-list {
+    overflow: auto
+}
+
+.pub {
+    /* border-top: thin solid #c0c0c0; */
+    /* radius: 15px; */
+    /* float: left !important; */
+    margin-top: 5px;
+    margin-bottom: 15px;
+    /* padding-top: 15px; */
+    overflow: auto
+}
+
+.pub-left {
+    float: left;
+    width: -webkit-calc(40% - (30px / 2));
+    width: calc(40% - (30px / 2));
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto
+}
+
+/* .pub-left>.intro-img {
+    width: 280px;
+    border-style: solid;
+    border-color: #9b3022
+} */
+
+.pub-left > .intro-img {
+    width: 280px; /* Set your desired width */
+    height: 130px; /* Set your desired height */
+    border-style: solid;
+    border-color: #9b3022;
+    object-fit: contain; /* Ensures the image fills the container while maintaining aspect ratio */
+    object-position: center; /* Centers the image inside the container */
+}
+
+
+.pub-right {
+    float: right;
+    width: -webkit-calc(60% - (30px / 2));
+    width: calc(60% - (30px / 2))
+}
+
+@media screen and (max-width: 800px) {
+
+    .pub-left,
+    .pub-right {
+        float: none;
+        margin: 10px auto;
+        width: -webkit-calc(100% - (30px / 2));
+        width: calc(100% - (30px / 2))
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .pub {
+        position: relative;
+        margin: 10px auto;
+        float: none;
+        width: -webkit-calc(100% - (30px / 2));
+        width: calc(100% - (30px / 2))
+    }
+}
+
+.pub-right>.title {
+    font-weight: 600
+}
+
+.pub-right>.authors>.author {
+    color: #0077B5;
+    font-weight: 400
+}
+
+.pub-right>.tags>.tag {
+    color: #9b3022;
+    font-weight: 500;
+    font-size: 14px
+}
+
+.pub-right>.desc>p {
+    margin: auto
+}
+
+.pub-right>.publish {
+    float: right
+}
+
+.pub-right>.publish>.publisher {
+    color: #002336;
+    font-size: 16px
+}
+
+.pub-right>.publish>.status {
+    color: #9b3022;
+    font-weight: 800;
+    font-size: 16px
+}
+
+@media screen and (max-width: 600px) {
+    .pub-right>.publish>.status {
+        display: none
+    }
+}
+
+.pub-right>.publish>.place {
+    color: #0077B5;
+    font-weight: 500;
+    font-size: 16px
+}
+
+@media screen and (max-width: 600px) {
+    .pub-right>.publish>.place {
+        display: none
+    }
+}
+
+.bio {
+    max-width: -webkit-calc(100% - (30px / 2));
+    max-width: calc(100% - (30px / 2));
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto
+}
+
+@media screen and (max-width: 600px) {
+    .bio {
+        max-width: -webkit-calc(100% - (30px / 2));
+        max-width: calc(100% - (30px / 2))
+    }
+}
+
+.bio-body {
+    margin: 5px;
+    padding: 0px
+}
+
+.posts {
+    max-width: -webkit-calc(96% - (30px / 2));
+    max-width: calc(96% - (30px / 2));
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto
+}
+
+@media screen and (max-width: 600px) {
+    .posts {
+        max-width: -webkit-calc(100% - (30px / 2));
+        max-width: calc(100% - (30px / 2))
+    }
+}
+
+.post-list {
+    margin-left: 0;
+    list-style: none
+}
+
+.post-list>li {
+    margin-bottom: 30px
+}
+
+.post-item {
+    border-top: thin solid #c0c0c0
+}
+
+.post-meta {
+    font-size: 14px;
+    color: #828282
+}
+
+.post-link {
+    display: block;
+    font-size: 24px
+}
+
+.post-header {
+    margin-bottom: 30px
+}
+
+.post-title {
+    font-size: 42px;
+    letter-spacing: -1px;
+    line-height: 1
+}
+
+@media screen and (max-width: 800px) {
+    .post-title {
+        font-size: 36px
+    }
+}
+
+.post-content {
+    margin-bottom: 30px
+}
+
+.post-content h2 {
+    font-size: 32px
+}
+
+@media screen and (max-width: 800px) {
+    .post-content h2 {
+        font-size: 28px
+    }
+}
+
+.post-content h3 {
+    font-size: 26px
+}
+
+@media screen and (max-width: 800px) {
+    .post-content h3 {
+        font-size: 22px
+    }
+}
+
+.post-content h4 {
+    font-size: 20px
+}
+
+@media screen and (max-width: 800px) {
+    .post-content h4 {
+        font-size: 18px
+    }
+}
+
+.project-header {
+    max-width: -webkit-calc(96% - (30px / 2));
+    max-width: calc(96% - (30px / 2))
+}
+
+@media screen and (max-width: 600px) {
+    .project-header {
+        max-width: -webkit-calc(100% - (30px / 2));
+        max-width: calc(100% - (30px / 2))
+    }
+}
+
+.project-header>h1 {
+    font-size: 20pt;
+    font-weight: 800;
+    text-align: center
+}
+
+.project-header>.project-meta {
+    font-size: 14px;
+    color: #292929;
+    float: right
+}
+
+.project-header>.project-contributors {
+    margin-left: auto;
+    margin-right: auto;
+    width: -webkit-calc(96% - (30px / 4));
+    width: -calc(96%-30px / 4)
+}
+
+.project-contributor {
+    margin-left: 5pt;
+    margin-right: 5pt;
+    float: left;
+    font-weight: 600;
+    color: #0077B5
+}
+
+.footnote {
+    font-size: 14px;
+    color: #828282;
+    float: left
+}
+
+.project-thumbnail,
+.project-figure {
+    margin-top: 10pt;
+    margin-bottom: 10pt;
+    margin: auto;
+    width: -webkit-calc(96%);
+    width: -calc(96%)
+}
+
+.project-figure>img {
+    align: middle
+}
+
+.project-thumbnail>img {
+    align: middle;
+    border: solid
+}
+
+.project-desc {
+    background-color: #e8e8e8;
+    margin: 10px 10px 10px 10px;
+    padding: 10px 10px 10px 20px;
+    border-radius: 4px;
+    color: #002336
+}
+
+@media screen and (max-width: 600px) {
+    .project-desc {
+        padding: 2px;
+        margin: 2px
+    }
+}
+
+.project-desc>div>strong,
+.project-desc>p>strong,
+.project-desc>strong {
+    color: #9b3022
+}
+
+.project-desc>.tags {
+    font-weight: 600
+}
+
+.project-desc>.tag,
+.project-desc>.tags>.tag {
+    color: #9b3022
+}
+
+.publisher {
+    color: #00a200;
+    font-size: 14px;
+    font-weight: 600
+}
+
+.project-content {
+    margin-bottom: 30px
+}
+
+.project-content h2 {
+    font-size: 32px
+}
+
+@media screen and (max-width: 800px) {
+    .project-content h2 {
+        font-size: 28px
+    }
+}
+
+.project-content h3 {
+    font-size: 26px
+}
+
+@media screen and (max-width: 800px) {
+    .project-content h3 {
+        font-size: 22px
+    }
+}
+
+.project-content h4 {
+    font-size: 20px
+}
+
+@media screen and (max-width: 800px) {
+    .project-content h4 {
+        font-size: 18px
+    }
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 4px 2px;  /* row gap 24px, column gap 32px */
+    flex-wrap: wrap;
+    width: 940px; /* 控制最大宽度，2列布局 */
+    margin: 0 auto;
+  }
+  
+  .github-card {
+    border: 1.5px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: white;
+    margin-bottom: 2px;
+    width: 430px;
+    font-family: system-ui, sans-serif;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .github-card a {
+    color: #1a1a1a;
+    text-decoration: none;
+  }
+  
+  .github-card a:hover {
+    color: #2563eb;
+    text-decoration: underline;
+  }
+  
+  .github-card .repo-link {
+    font-weight: 500;
+    font-size: 14px;
+  }
+  
+  .github-card .label {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 2px 8px;
+    border: 1px solid #d1d5db;
+    border-radius: 9999px;
+    font-size: 12px;
+    color: #6b7280;
+  }
+  
+  .github-card .description {
+    margin-top: 8px;
+    font-size: 11px;
+    color: #6b7280;
+  }
+  
+  .github-card .meta {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    color: #6b7280;
+  }
+  
+  .github-card .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #2563eb;
+    border-radius: 50%;
+    margin-right: 6px;
+  }
+  
+  .github-card .meta a {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 16px;
+    color: #6b7280;
+  }
+  
+  .github-card .meta a:hover {
+    color: #2563eb;
+  }
+  
+  .github-card svg {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+  }
