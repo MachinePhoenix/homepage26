@@ -1146,6 +1146,7 @@ hr.soft {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 .title-note {
@@ -1153,6 +1154,7 @@ hr.soft {
     color: #666;
     font-weight: 400;
     text-align: right;
+    margin-left: auto;
     margin-left: 10px;
     white-space: nowrap;
 }
@@ -1226,6 +1228,7 @@ hr.soft {
         font-size: 18px;
         flex-direction: column;
         align-items: flex-start;
+        flex-wrap: nowrap;
     }
 
     .title-note {
