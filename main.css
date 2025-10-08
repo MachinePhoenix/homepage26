@@ -1064,19 +1064,6 @@ hr.soft {
 
 .timeline-body {
     padding: 0;
-    position: relative;
-}
-
-/* 修复时间轴线 - 从第一个圆圈开始，到最后一个圆圈结束 */
-.timeline-body::before {
-    content: '';
-    position: absolute;
-    top: 50%; /* 从第一个圆圈的中间开始 */
-    bottom: 50%; /* 到最后一个圆圈的中间结束 */
-    left: 33px; /* 调整竖线位置使其穿过圆圈中心 */
-    width: 3px;
-    background: #333;
-    z-index: 1;
 }
 
 .timeline-start {
@@ -1084,24 +1071,23 @@ hr.soft {
     width: calc(100% - 2 * (20px));
     text-align: center;
     padding: 20px;
-    position: relative;
-    z-index: 2;
-    margin-left: 60px;
 }
 
 .timeline-item {
-    width: calc(100% - 120px);
-    margin-left: 60px;
-    padding: 20px 25px 20px 20px;
+    width: calc(100% - 60px); /* 调整宽度以适应边框 */
+    margin-left: 40px;
+    padding: 20px;
+    border-left: 5px solid #333;
     text-align: left;
+    border-right: none;
     position: relative;
+    /* 添加边框和阴影效果 */
     border: 1px solid #e0e0e0;
     border-radius: 8px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     background: white;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     transition: all 0.3s ease;
-    z-index: 2;
 }
 
 /* 悬停效果 */
@@ -1111,51 +1097,69 @@ hr.soft {
     border-color: #bbb;
 }
 
-/* 修复圆圈位置 - 确保在竖线中间 */
-.timeline-item::before {
-    width: 16px;
-    height: 16px;
+.timeline-item:before {
+    width: 11px;
+    height: 11px;
     background: #333;
     content: "";
     display: block;
     position: absolute;
-    border-radius: 50%;
-    left: -43px; /* 精确定位使圆圈中心在竖线上 */
-    top: 50%;
-    transform: translate(-50%, -50%); /* 使用translate精确定位中心 */
-    z-index: 3;
-    border: 3px solid white;
-    box-shadow: 0 0 0 2px #333;
-}
-
-/* 修复第一个item的竖线问题 - 添加顶部遮盖 */
-.timeline-body::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 30px;
-    width: 8px;
-    height: calc(50% - 50%); /* 遮盖第一个圆圈上方的竖线 */
-    background: white;
+    border-radius: 5px;
+    left: -8px;
+    right: auto;
     z-index: 2;
 }
 
-/* 修复图片大小问题 */
+.timeline-item:nth-child(odd):before {
+    left: -8px;
+    right: auto;
+}
+
+.timeline-item:nth-child(even):before {
+    left: -8px;
+    right: auto;
+}
+
+.timeline-item:nth-child(odd):after {
+    left: -8px;
+    right: auto;
+}
+
+.timeline-item:nth-child(odd) {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: none;
+    text-align: left;
+    margin-left: 40px;
+}
+
+.timeline-item:nth-child(even) {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: none;
+    text-align: left;
+    margin-left: 40px;
+}
+
+.timeline-item:nth-child(even):after {
+    right: auto;
+    left: -8px;
+}
+
+/* 新增机构行样式 */
 .timeline-org {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     font-size: 18px;
     font-weight: 600;
     color: #113f7c;
 }
 
-/* 使用更具体的选择器确保图片大小 */
-.timeline-item .timeline-org .social-icon,
-.timeline-org img.social-icon {
-    margin-right: 12px;
-    width: 32px !important;
-    height: 32px !important;
+.timeline-org .social-icon {
+    margin-right: 10px;
+    width: 32px;
+    height: 32px;
     object-fit: contain;
 }
 
@@ -1163,7 +1167,7 @@ hr.soft {
     font-size: 14px;
     font-weight: 500;
     color: #666;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .timeline-title {
@@ -1171,60 +1175,65 @@ hr.soft {
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #9b3022;
-    margin-bottom: 10px;
-    padding-right: 10px;
+    margin-bottom: 8px;
 }
 
 .timeline-desc {
     font-size: 16px;
     font-weight: 200;
-    padding-right: 10px;
 }
 
 .timeline-host {
     font-size: 14px;
     font-weight: 400;
-    padding-right: 10px;
 }
 
-/* 调整最后一个项目的样式 */
 .timeline > .timeline-body > .timeline-item:last-child:after {
-    display: none;
+    bottom: 0;
+    width: 11px;
+    height: 11px;
+    background: #333;
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 5px;
+    left: -8px;
 }
 
-.timeline > .timeline-body > .timeline-item:last-child:nth-child(even),
-.timeline > .timeline-body > .timeline-item:last-child:nth-child(odd) {
+.timeline > .timeline-body > .timeline-item:last-child:nth-child(even) {
     vertical-align: middle;
     min-height: 200px;
-    border-left: none;
+    border-left: 5px dashed #333;
     border-right: none;
 }
 
-/* 修复最后一个item的竖线问题 - 添加底部遮盖 */
-.timeline > .timeline-body > .timeline-item:last-child::after {
-    content: '';
-    position: absolute;
-    bottom: -25px; /* 调整位置遮盖最后一个圆圈下方的竖线 */
-    left: 30px;
-    width: 8px;
-    height: calc(50% - 50%);
-    background: white;
-    z-index: 2;
+.timeline > .timeline-body > .timeline-item:last-child:nth-child(odd) {
+    vertical-align: middle;
+    min-height: 200px;
+    border-left: 5px dashed #333;
+    border-right: none;
 }
 
 @media screen and (max-width: 600px) {
-    .timeline-body::before {
-        left: 28px;
-    }
-    
     .timeline-start {
         min-height: 50px;
         padding: 0 0 0 5px;
         text-align: left;
+        border-left: 5px dashed #333;
         width: 100%;
         padding-left: 5px;
-        margin-left: 50px;
-        border-left: none;
+        margin-left: 5px;
+    }
+
+    .timeline-start:after {
+        left: 17px;
+        width: 11px;
+        height: 11px;
+        background: #333;
+        content: "";
+        display: block;
+        position: absolute;
+        border-radius: 5px;
     }
 
     .timeline-item,
@@ -1232,40 +1241,42 @@ hr.soft {
     .timeline-item:nth-child(even) {
         min-height: 0;
         text-align: left;
+        border-left: 5px solid #333;
         border-right: 0px;
-        width: calc(100% - 90px);
-        padding: 15px 20px 15px 15px;
-        margin-left: 60px;
+        width: calc(100% - 65px);
+        padding: 15px;
+        margin-left: 40px;
         margin-right: 0px;
-        border-left: none;
-    }
-    
-    .timeline-item::before {
-        left: -48px;
-        width: 14px;
-        height: 14px;
+        padding-right: 0px;
     }
 
     .timeline > .timeline-body > .timeline-item:last-child:nth-child(odd),
     .timeline > .timeline-body > .timeline-item:last-child:nth-child(even) {
         min-height: 0;
         text-align: left;
-        border-left: none;
+        border-left: 5px solid #333;
         border-right: 0px;
-        width: calc(100% - 90px);
-        padding: 15px 20px 15px 15px;
-        margin-left: 60px;
+        width: calc(100% - 65px);
+        padding: 15px;
+        margin-left: 40px;
         margin-right: 0px;
+        padding-right: 0px;
+    }
+
+    .timeline-item:before {
+        left: -8px;
+    }
+
+    .timeline-item:after {
+        left: -8px;
     }
 
     .timeline-org {
         font-size: 16px;
     }
-    
-    .timeline-item .timeline-org .social-icon,
-    .timeline-org img.social-icon {
-        width: 28px !important;
-        height: 28px !important;
+    .timeline-org .social-icon {
+        width: 28px;
+        height: 28px;
     }
 
     .timeline-date {
@@ -1274,26 +1285,14 @@ hr.soft {
 
     .timeline-title {
         font-size: 16px;
-        padding-right: 5px;
     }
 
     .timeline-desc {
         font-size: 12px;
-        padding-right: 5px;
     }
 
     .timeline-host {
         font-size: 10px;
-        padding-right: 5px;
-    }
-    
-    /* 移动端修复竖线遮盖 */
-    .timeline-body::after {
-        left: 25px;
-    }
-    
-    .timeline > .timeline-body > .timeline-item:last-child::after {
-        left: 25px;
     }
 }
 
