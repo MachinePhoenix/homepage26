@@ -36,7 +36,7 @@ html {
 body {
     z-index: initial;
     font-family: "Roboto", Helvetica, Arial, sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.5;
     font-weight: 300;
     color: #111;
@@ -116,7 +116,7 @@ blockquote {
     color: #828282;
     border-left: 4px solid #e8e8e8;
     padding-left: 15px;
-    font-size: 18px;
+    font-size: 20px;
     letter-spacing: -1px;
     font-style: italic
 }
@@ -127,7 +127,7 @@ blockquote>:last-child {
 
 pre,
 code {
-    font-size: 15px;
+    font-size: 16px;
     border: 1px solid #e8e8e8;
     border-radius: 3px;
     background-color: #eef
@@ -195,7 +195,7 @@ pre>code {
 }
 
 .site-title {
-    font-size: 26px;
+    font-size: 28px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif, Helvetica;
     line-height: 56px;
@@ -301,7 +301,7 @@ pre>code {
 }
 
 .footer-col-wrapper {
-    font-size: 15px;
+    font-size: 16px;
     color: #828282;
     margin-left: -15px
 }
@@ -358,19 +358,19 @@ pre>code {
 }
 
 .sm-heading {
-    font-size: 20px;
+    font-size: 22px;
     font-color: #9b3022;
     font-weight: 300
 }
 
 .md-heading {
-    font-size: 24px;
+    font-size: 26px;
     font-color: #9b3022;
     font-weight: 400
 }
 
 .lg-heading {
-    font-size: 30px;
+    font-size: 32px;
     font-color: #9b3022;
     font-weight: 600
 }
@@ -1058,7 +1058,7 @@ hr.soft {
     font-family: 'Roboto', sans-serif, Helvetica;
     margin-top: 10px;
     margin-bottom: 10px;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 400;
 }
 
@@ -1094,7 +1094,6 @@ hr.soft {
     border-color: #bbb;
 }
 
-/* 移除所有时间轴相关的伪元素 */
 .timeline-item:before,
 .timeline-item:nth-child(odd):before,
 .timeline-item:nth-child(even):before,
@@ -1105,7 +1104,6 @@ hr.soft {
     display: none;
 }
 
-/* 统一所有timeline-item的样式，移除时间轴相关属性 */
 .timeline-item:nth-child(odd),
 .timeline-item:nth-child(even) {
     margin: 0 auto 20px auto;
@@ -1120,7 +1118,7 @@ hr.soft {
     display: flex;
     align-items: center;
     margin-bottom: 8px;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
     color: #113f7c;
 }
@@ -1133,14 +1131,14 @@ hr.soft {
 }
 
 .timeline-date {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
     color: #666;
     margin-bottom: 10px;
 }
 
 .timeline-title {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #9b3022;
@@ -1148,12 +1146,12 @@ hr.soft {
 }
 
 .timeline-desc {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 200;
 }
 
 .timeline-host {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
 }
 
@@ -1200,7 +1198,7 @@ hr.soft {
     }
 
     .timeline-org {
-        font-size: 16px;
+        font-size: 18px;
     }
     
     .timeline-org .social-icon {
@@ -1209,19 +1207,19 @@ hr.soft {
     }
 
     .timeline-date {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .timeline-title {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .timeline-desc {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .timeline-host {
-        font-size: 10px;
+        font-size: 12px;
     }
 }
 
