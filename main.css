@@ -1143,6 +1143,9 @@ hr.soft {
     font-family: 'Roboto', sans-serif;
     color: #9b3022;
     margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .title-note {
