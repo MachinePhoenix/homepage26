@@ -1236,7 +1236,7 @@ hr.soft {
         font-size: 14px;
         text-align: right;
         margin-left: auto;
-        margin-top: 0;
+        margin-top: 2px;
         white-space: nowrap;
     }
 
