@@ -1145,6 +1145,15 @@ hr.soft {
     margin-bottom: 8px;
 }
 
+.title-note {
+    font-size: 16px;
+    color: #666;
+    font-weight: 400;
+    text-align: right;
+    margin-left: 10px;
+    white-space: nowrap;
+}
+
 .timeline-desc {
     font-size: 18px;
     font-weight: 200;
