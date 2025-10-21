@@ -45,11 +45,12 @@ img.img-logo {
 }
 
 /* https://pytorch.org/assets/brand-guidelines/PyTorch-Brand-Guidelines.pdf */
-.details a:hover, .right-panel a:hover { color: #805AD5; }
-a:active { color: #805AD5 }
+.details a:hover, .right-panel a:hover { color: rgb(238, 76, 44); }
+a:active { color: rgb(238, 76, 44) }
 #sidebar a:hover{text-decoration: none;}
 .social a:hover{text-decoration: none; color: #4a4a4a; }
 .social a:hover svg{transform: scale(1.5);}
 .dark{color: #4a4a4a!important;}
 .dark:hover{color: #4a4a4a!important;}
+
 
